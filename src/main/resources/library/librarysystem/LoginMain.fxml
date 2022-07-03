@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="299.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.LoginMainController">
+   <children>
+      <TextField layoutX="60.0" layoutY="92.0" prefHeight="37.0" prefWidth="179.0" promptText="User Name" />
+      <JFXButton layoutX="94.0" layoutY="263.0" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #2196f3;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Serif Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <PasswordField layoutX="59.0" layoutY="163.0" prefHeight="38.0" prefWidth="179.0" promptText="Password" />
+      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="22.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Contacts_52px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="22.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Lock%202_64px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

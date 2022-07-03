@@ -15,7 +15,10 @@ public class LibraryApp extends Application {
         stage.setTitle("Library Management System");
         stage.setScene(scene);
         stage.show();
-        stage.setResizable(false); // avoid resize window
+        stage.setMaximized(false);
+        stage.setResizable(true);// avoid reesize window
+        stage.setFullScreen(false);
+
     }
 
     public static void main(String[] args) {

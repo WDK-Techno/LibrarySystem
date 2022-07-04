@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchUserController">
+   <children>
+      <Text layoutX="272.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search User">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
+         </font>
+      </Text>
+      <TextField fx:id="userNameInput" layoutX="266.0" layoutY="142.0" prefHeight="36.0" prefWidth="203.0" promptText="Name">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="nameSearchBtn" layoutX="484.0" layoutY="143.0" onAction="#searchUserfromName" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="nicInput" layoutX="266.0" layoutY="205.0" prefHeight="36.0" prefWidth="203.0" promptText="Author">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="nicSearchBtn" layoutX="484.0" layoutY="206.0" onAction="#searchUserFromNIC" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <TextArea fx:id="outPutTextArea" disable="true" layoutX="197.0" layoutY="346.0" prefHeight="203.0" prefWidth="426.0" />
+      <TextField fx:id="contactNoInput" layoutX="266.0" layoutY="264.0" prefHeight="36.0" prefWidth="203.0" promptText="Contact Number">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="contactNoSearchBtn1" layoutX="484.0" layoutY="265.0" onAction="#searchUserFromContactNo" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -3,9 +3,17 @@ package library.librarysystem.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import library.librarysystem.DBConnection.DBHandler;
 
-public class StaffRegController {
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class StaffRegController implements Initializable {
 
     @FXML
     private TextField passwordInput;
@@ -16,18 +24,55 @@ public class StaffRegController {
     @FXML
     private TextField userNameInput;
 
+
+    private DBHandler handler;
+    private Connection connection;
+    private PreparedStatement pst;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //database
+        handler = new DBHandler();
+
+
+    }
+
     @FXML
     void registerStaff(ActionEvent event) {
         String name;
         String password;
 
-       name = userNameInput.getText();
-       password=passwordInput.getText();
+        name = userNameInput.getText();
+        password=passwordInput.getText();
+
+        //SAVING DATA TO DATABASE
+
+        connection = handler.getConnection();
+
+        String insertQuery = "INSERT INTO Staff (UserName,Password)" + "VALUES (?,?)"; //create string including our query
+
+        try {
+            pst = connection.prepareStatement(insertQuery);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            //replace name and password for "values(?,?)" in inertQuery String
+            pst.setString(1,name);
+            pst.setString(2,password);
+
+            pst.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
         System.out.println("Hello " + name);
         System.out.println("Your password is " + password);
 
     }
-
 
 }

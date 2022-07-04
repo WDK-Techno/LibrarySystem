@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #DBE1E0; -fx-border-style: dashed;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.StaffRegController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #DBE1E0; -fx-border-style: dashed;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.StaffRegController">
    <children>
-      <Text layoutX="128.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="staff registation" textAlignment="CENTER" wrappingWidth="327.84978675842285">
+      <Text layoutX="210.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Registation" textAlignment="CENTER" wrappingWidth="423.84978675842285">
          <font>
-            <Font name="Candara" size="35.0" />
+            <Font name="DejaVuMathTeXGyre-Regular" size="32.0" />
          </font>
       </Text>
-      <TextField fx:id="userNameInput" layoutX="177.0" layoutY="276.0" promptText="User Name" AnchorPane.rightAnchor="171.8" AnchorPane.topAnchor="276.0">
+      <TextField fx:id="userNameInput" layoutX="303.0" layoutY="191.0" promptText="User Name" AnchorPane.rightAnchor="235.39999999999998" AnchorPane.topAnchor="191.0">
          <font>
-            <Font name="Arial" size="20.0" />
+            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="userPasswordInput" layoutX="180.0" layoutY="409.0" promptText="Password">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="staffLogin" layoutX="178.0" layoutY="529.0" onAction="#login" prefHeight="47.0" prefWidth="254.0" ripplerFill="BLACK" style="-fx-background-color: #4E80ED;" text="Login">
+      <JFXButton fx:id="signUpButton" layoutX="289.0" layoutY="386.0" onAction="#registerStaff" prefHeight="50.0" prefWidth="271.0" ripplerFill="BLACK" style="-fx-background-color: #4E80ED;" text="SignUp">
          <font>
             <Font name="Georgia Bold" size="26.0" />
          </font>
       </JFXButton>
+      <PasswordField fx:id="passwordInput" layoutX="289.0" layoutY="276.0" prefHeight="38.0" prefWidth="271.0" promptText="Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>

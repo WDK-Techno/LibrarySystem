@@ -11,7 +11,8 @@ public class LibraryApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LibraryApp.class.getResource("LoginMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 300, 400);
+//        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 400); //for logginMain
         stage.setTitle("Library Management System");
         stage.setScene(scene);
         stage.show();

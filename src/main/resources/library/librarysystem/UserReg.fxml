@@ -8,17 +8,17 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.UserRegController">
    <children>
-      <TextField disable="true" layoutX="271.0" layoutY="527.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
+      <TextField fx:id="outputUserID" disable="true" layoutX="262.0" layoutY="533.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="82.0" prefHeight="43.0" prefWidth="258.0" promptText="Name">
+      <TextField fx:id="usernameInput" layoutX="262.0" layoutY="60.0" prefHeight="43.0" prefWidth="258.0" promptText="Name">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="133.0" prefHeight="43.0" prefWidth="258.0" promptText="DOB">
+      <TextField fx:id="userBirthInput" layoutX="262.0" layoutY="121.0" prefHeight="43.0" prefWidth="258.0" promptText="DOB">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
@@ -28,32 +28,32 @@
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField layoutX="271.0" layoutY="188.0" prefHeight="43.0" prefWidth="258.0" promptText="NIC">
+      <TextField fx:id="userNicInput" layoutX="262.0" layoutY="177.0" prefHeight="43.0" prefWidth="258.0" promptText="NIC">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="241.0" prefHeight="43.0" prefWidth="258.0" promptText="Gender">
+      <TextField fx:id="userGenderInput" layoutX="262.0" layoutY="237.0" prefHeight="43.0" prefWidth="258.0" promptText="Gender">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="295.0" prefHeight="43.0" prefWidth="258.0" promptText="Contact No">
+      <TextField fx:id="userContacInput" layoutX="262.0" layoutY="300.0" prefHeight="43.0" prefWidth="258.0" promptText="Contact No">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="350.0" prefHeight="43.0" prefWidth="258.0" promptText="Email Address">
+      <TextField fx:id="userEmailInput" layoutX="262.0" layoutY="362.0" prefHeight="43.0" prefWidth="258.0" promptText="Email Address">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="271.0" layoutY="405.0" prefHeight="43.0" prefWidth="258.0" promptText="Address">
+      <TextField fx:id="userAddressInput" layoutX="262.0" layoutY="425.0" prefHeight="43.0" prefWidth="258.0" promptText="Address">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="331.0" layoutY="467.0" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Register" textFill="WHITE">
+      <JFXButton fx:id="registerButton" layoutX="310.0" layoutY="476.0" onAction="#registerUser" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Register" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

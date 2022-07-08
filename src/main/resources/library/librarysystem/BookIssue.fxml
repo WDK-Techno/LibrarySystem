@@ -34,8 +34,14 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea fx:id="userInfoOutputTextArea" disable="true" layoutX="263.0" layoutY="197.0" prefHeight="99.0" prefWidth="303.0" />
-      <TextArea fx:id="bookInfoOutputTextArea" disable="true" layoutX="263.0" layoutY="387.0" prefHeight="99.0" prefWidth="303.0" />
+      <TextArea fx:id="userInfoOutputTextArea" editable="false" layoutX="263.0" layoutY="193.0" prefHeight="108.0" prefWidth="303.0">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="15.0" />
+         </font></TextArea>
+      <TextArea fx:id="bookInfoOutputTextArea" editable="false" layoutX="263.0" layoutY="387.0" prefHeight="99.0" prefWidth="303.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextArea>
       <JFXButton fx:id="issueBook" layoutX="359.0" layoutY="519.0" onAction="#issueBook" prefHeight="49.0" prefWidth="110.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
          <font>
             <Font size="17.0" />

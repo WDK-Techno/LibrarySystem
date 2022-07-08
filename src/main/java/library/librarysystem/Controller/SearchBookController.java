@@ -58,7 +58,7 @@ public class SearchBookController implements Initializable {
 
         connection = handler.getConnection();
 
- //       String getDetailsQuery = "SELECT * FROM book WHERE BookName LIKE"+"'"+"%"+"?"+"'";
+        String getDetailsQuery = "SELECT * FROM book WHERE BookName LIKE"+"'"+"%"+"?"+"'";
 
         try {
             pst = connection.prepareStatement(getDetailsQuery);

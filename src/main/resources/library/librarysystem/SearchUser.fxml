@@ -24,7 +24,7 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="nicInput" layoutX="266.0" layoutY="205.0" prefHeight="36.0" prefWidth="203.0" promptText="Author">
+      <TextField fx:id="nicInput" layoutX="266.0" layoutY="205.0" prefHeight="36.0" prefWidth="203.0" promptText="NIC">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>

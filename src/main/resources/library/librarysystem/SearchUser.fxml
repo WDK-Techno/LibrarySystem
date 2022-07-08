@@ -34,7 +34,10 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea fx:id="outPutTextArea" disable="true" layoutX="197.0" layoutY="346.0" prefHeight="203.0" prefWidth="426.0" />
+      <TextArea fx:id="outPutTextArea" disable="true" layoutX="197.0" layoutY="346.0" prefHeight="203.0" prefWidth="426.0">
+         <font>
+            <Font name="Segoe UI" size="20.0" />
+         </font></TextArea>
       <TextField fx:id="contactNoInput" layoutX="266.0" layoutY="264.0" prefHeight="36.0" prefWidth="203.0" promptText="Contact Number">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />

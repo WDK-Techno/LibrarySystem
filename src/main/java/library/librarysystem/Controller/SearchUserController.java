@@ -79,11 +79,25 @@ public class SearchUserController implements Initializable {
                 String emailFromDB = result.getString("Email");
                 String addressFromDB = result.getString("Address");
 
-                outPutTextArea.setText("User ID :- " + userIDFromDB +"\n"+"User Name :- " + userNameFromDB+"\n"+
-                        "D.O.B :- "+ DOBfromDB +"NIC :- "+ nicFromDB+ "Gender :- "+genderFromDB+ "Contact No :- "+contactFromDB+
-                        "Email :- "+emailFromDB+ "Address :- "+ addressFromDB);
+                outPutTextArea.setText(
+                        "User ID        :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B          :- "+ DOBfromDB +"\n"+
+                        "NIC             :- "+ nicFromDB+"\n"+
+                        "Gender       :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                        "Email           :- "+emailFromDB+"\n"+
+                        "Address       :- "+ addressFromDB+"\n");
 
-                System.out.println("User :--> " + userIDFromDB + " ID :- " + userIDFromDB );
+                System.out.println(
+                        "User ID    :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B      :- "+ DOBfromDB +"\n"+
+                        "NIC        :- "+ nicFromDB+"\n"+
+                        "Gender     :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                         "Email     :- "+emailFromDB+"\n"+
+                         "Address   :- "+ addressFromDB+"\n");
             }
             if (found == 1){
                 System.out.println("USER FOUND Successfull");
@@ -132,14 +146,32 @@ public class SearchUserController implements Initializable {
                 found = found + 1;
                 String userNameFromDB = result.getString("UserName");
                 int userIDFromDB = result.getInt("UserID");
-                String DOBfromDB = result.getNString("DOB");
-                String nicFromDB = result.getNString("NIC");
+                String DOBfromDB = result.getString("DOB");
+                String nicFromDB = result.getString("NIC");
                 String genderFromDB = result.getString("Gender");
-                String contactFromDB = result.getNString("ContactNo");
-                String emailFromDB = result.getNString("Email");
-                String addressFromDB = result.getNString("Address");
+                String contactFromDB = result.getString("ContactNo");
+                String emailFromDB = result.getString("Email");
+                String addressFromDB = result.getString("Address");
 
-                System.out.println("User :--> " + userIDFromDB + " ID :- " + userIDFromDB );
+                outPutTextArea.setText(
+                        "User ID        :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B          :- "+ DOBfromDB +"\n"+
+                        "NIC             :- "+ nicFromDB+"\n"+
+                        "Gender       :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                        "Email           :- "+emailFromDB+"\n"+
+                         "Address       :- "+ addressFromDB+"\n");
+
+                System.out.println(
+                        "User ID    :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B      :- "+ DOBfromDB +"\n"+
+                        "NIC        :- "+ nicFromDB+"\n"+
+                        "Gender     :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                        "Email      :- "+emailFromDB+"\n"+
+                         "Address   :- "+ addressFromDB+"\n");
             }
             if (found == 1){
                 System.out.println("USER FOUND Successfull");
@@ -164,6 +196,75 @@ public class SearchUserController implements Initializable {
     }
 
     public void searchUserfromName(ActionEvent event) {
+
+        String name = userNameInput.getText();
+
+        connection = handler.getConnection();
+
+        String getDetailsQuery = "SELECT * FROM user WHERE UserName LIKE ?";
+
+        try {
+            pst = connection.prepareStatement(getDetailsQuery);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            pst.setString(1, "%"+ name + "%");
+
+            ResultSet result = pst.executeQuery();
+
+            int found = 0;
+
+            while (result.next()){
+                found = found + 1;
+                String userNameFromDB = result.getString("UserName");
+                int userIDFromDB = result.getInt("UserID");
+                String DOBfromDB = result.getString("DOB");
+                String nicFromDB = result.getString("NIC");
+                String genderFromDB = result.getString("Gender");
+                String contactFromDB = result.getString("ContactNo");
+                String emailFromDB = result.getString("Email");
+                String addressFromDB = result.getString("Address");
+
+                outPutTextArea.setText(
+                        "User ID        :- " + userIDFromDB +"\n"+
+                                "User Name  :- " + userNameFromDB+"\n"+
+                                "D.O.B          :- "+ DOBfromDB +"\n"+
+                                "NIC             :- "+ nicFromDB+"\n"+
+                                "Gender       :- "+genderFromDB+"\n"+
+                                "Contact No :- "+contactFromDB+"\n"+
+                                "Email           :- "+emailFromDB+"\n"+
+                                "Address       :- "+ addressFromDB+"\n");
+
+                System.out.println(
+                        "User ID    :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B      :- "+ DOBfromDB +"\n"+
+                        "NIC        :- "+ nicFromDB+"\n"+
+                        "Gender     :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                        "Email      :- "+emailFromDB+"\n"+
+                        "Address    :- "+ addressFromDB+"\n");
+            }
+            if (found >= 1){
+                System.out.println("USER FOUND Successfull");
+//                System.out.println("Hello " + name);
+
+            }else {
+                System.out.println("Check Again User Name!");
+                //Genarate pop error
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("User Name Incorrect");
+                alert.show();
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

@@ -7,36 +7,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchUserController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
    <children>
       <Text layoutX="272.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Issue">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField layoutX="266.0" layoutY="134.0" prefHeight="36.0" prefWidth="203.0" promptText="User ID">
+      <TextField fx:id="userIDinput" layoutX="266.0" layoutY="134.0" prefHeight="36.0" prefWidth="203.0" promptText="User ID">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="484.0" layoutY="135.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="userIDCheck" layoutX="484.0" layoutY="135.0" onAction="#issueBookfFomUserID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField layoutX="264.0" layoutY="332.0" prefHeight="36.0" prefWidth="203.0" promptText="BookID">
+      <TextField fx:id="bookIDinput" layoutX="264.0" layoutY="332.0" prefHeight="36.0" prefWidth="203.0" promptText="BookID">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="482.0" layoutY="333.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="bookIDcheck" layoutX="482.0" layoutY="333.0" onAction="#issueBookfFomBookID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea disable="true" layoutX="263.0" layoutY="197.0" prefHeight="99.0" prefWidth="303.0" />
-      <TextArea disable="true" layoutX="263.0" layoutY="387.0" prefHeight="99.0" prefWidth="303.0" />
-      <JFXButton layoutX="359.0" layoutY="519.0" prefHeight="49.0" prefWidth="110.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
+      <TextArea fx:id="userInfoOutputTextArea" disable="true" layoutX="263.0" layoutY="197.0" prefHeight="99.0" prefWidth="303.0" />
+      <TextArea fx:id="bookInfoOutputTextArea" disable="true" layoutX="263.0" layoutY="387.0" prefHeight="99.0" prefWidth="303.0" />
+      <JFXButton fx:id="issueBook" layoutX="359.0" layoutY="519.0" onAction="#issueBook" prefHeight="49.0" prefWidth="110.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

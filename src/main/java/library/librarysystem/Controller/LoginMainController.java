@@ -48,7 +48,7 @@ public class LoginMainController implements Initializable{
         //database
         connection = handler.getConnection();
 
-        String getDetailsQuery = "SELECT StaffID FROM Staff WHERE UserName = ? AND Password = ?";
+        String getDetailsQuery = "SELECT * FROM Staff WHERE UserName = ? AND Password = ?";
 
         try {
             pst = connection.prepareStatement(getDetailsQuery);
@@ -66,10 +66,15 @@ public class LoginMainController implements Initializable{
 
             while (result.next()){
                 found = found + 1;
+                String userNameFromDB = result.getString("UserName");
+                String userPasswordFromDB = result.getString("Password");
+                int userIDFromDB = result.getInt("StaffID");
+
+                System.out.println("User :--> " + userIDFromDB + " ID :- " + userIDFromDB + " Password :- " + userPasswordFromDB );
             }
             if (found == 1){
                 System.out.println("Loggin Successfull");
-                System.out.println("Hello " + name);
+//                System.out.println("Hello " + name);
 
             }else {
                 System.out.println("Incorrect Input");

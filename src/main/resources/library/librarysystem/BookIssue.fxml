@@ -14,7 +14,7 @@
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField fx:id="userIDinput" layoutX="266.0" layoutY="134.0" prefHeight="36.0" prefWidth="203.0" promptText="User ID">
+      <TextField fx:id="userIDinput" layoutX="266.0" layoutY="134.0" onMouseClicked="#emtyBookId" prefHeight="36.0" prefWidth="203.0" promptText="User ID">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="bookIDinput" layoutX="264.0" layoutY="332.0" prefHeight="36.0" prefWidth="203.0" promptText="BookID">
+      <TextField fx:id="bookIDinput" layoutX="264.0" layoutY="332.0" onMouseClicked="#emptyUserID" prefHeight="36.0" prefWidth="203.0" promptText="BookID">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>

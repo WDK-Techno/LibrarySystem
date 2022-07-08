@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import library.librarysystem.DBConnection.DBHandler;
 
 import java.net.URL;
@@ -192,5 +193,16 @@ public class BookIssueController implements Initializable {
         }
 
     }
+
+    @FXML
+    public void emptyUserID(MouseEvent event) {
+        userIDinput.setText("");
+    }
+
+    @FXML
+    public void emtyBookId(javafx.scene.input.MouseEvent event) {
+        bookIDinput.setText("");
+    }
+
 
 }

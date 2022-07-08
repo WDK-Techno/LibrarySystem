@@ -12,7 +12,7 @@
       <TextField id="Book_Name" fx:id="BookName" layoutX="326.0" layoutY="163.0" promptText="Book Name" />
       <TextField id="Author" fx:id="Author" layoutX="324.0" layoutY="231.0" promptText="Author" />
       <TextField id="Category" fx:id="Category" layoutX="326.0" layoutY="288.0" promptText="Category" />
-      <JFXButton fx:id="AddBookButton" layoutX="378.0" layoutY="359.0" />
+      <JFXButton fx:id="AddBookButton" layoutX="350.0" layoutY="360.0" onAction="#Bookadd" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #6371EF;" text="Button" />
       <Text layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
          <font>
             <Font name="Arial" size="40.0" />

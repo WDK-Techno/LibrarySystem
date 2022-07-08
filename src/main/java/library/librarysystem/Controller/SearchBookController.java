@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Handler;
+
 
 public class SearchBookController implements Initializable {
 
@@ -58,7 +58,7 @@ public class SearchBookController implements Initializable {
 
         connection = handler.getConnection();
 
- //       String getDetailsQuery = "SELECT * FROM book WHERE BookName LIKE"+"'"+"%"+"?"+"'";
+        String getDetailsQuery = "SELECT * FROM book WHERE BookName LIKE ?";
 
         try {
             pst = connection.prepareStatement(getDetailsQuery);
@@ -69,7 +69,8 @@ public class SearchBookController implements Initializable {
         }
 
         try {
-            pst.setString(1,name);
+            pst.setString(1,name + "%");
+
             ResultSet result = pst.executeQuery();
 
 
@@ -77,30 +78,27 @@ public class SearchBookController implements Initializable {
 
             while (result.next()) {
                 found = found + 1;
+
+
+
+
             }
-            if (found == 1){
+            if (found >= 1){
                 System.out.println("Loggin Successfull");
 //                System.out.println("Hello " + name);
 
             }else {
                 System.out.println("Incorrect Input");
-                //Genarate pop error
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText("User Name or Password Incorrect");
-                alert.show();
+//                //Genarate pop error
+//                Alert alert = new Alert(Alert.AlertType.ERROR);
+//                alert.setHeaderText(null);
+//                alert.setContentText("User Name or Password Incorrect");
+//                alert.show();
             }
-
-
-
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        outPutTextArea.setText("Hello WDK : " + name);
-
     }
 
 

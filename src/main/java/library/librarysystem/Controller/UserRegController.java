@@ -11,6 +11,7 @@ import library.librarysystem.DBConnection.DBHandler;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -20,7 +21,7 @@ public class UserRegController implements Initializable {
     private JFXButton registerButton;
 
     @FXML
-    private TextField user;
+    private TextField outputUserID;
 
     @FXML
     private TextField userAddressInput;
@@ -46,6 +47,7 @@ public class UserRegController implements Initializable {
     private DBHandler handler;
     private Connection connection;
     private PreparedStatement pst;
+    private PreparedStatement pst2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,9 +71,10 @@ public class UserRegController implements Initializable {
         connection = handler.getConnection();
 
         String query="INSERT INTO user(UserName,DOB,NIC,Gender,ContactNo,Email,Address)" + "VALUES (?,?,?,?,?,?,?)";
+        String getquery="SELECT * FROM user WHERE NIC=?";
         try {
             pst=connection.prepareStatement(query);
-
+            pst2=connection.prepareStatement(getquery);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -84,7 +87,19 @@ public class UserRegController implements Initializable {
             pst.setString(6,email);
             pst.setString(7,address);
 
+
             pst.executeUpdate();
+
+            pst2.setString(1,NIC);
+
+            ResultSet result = pst2.executeQuery();
+
+            while(result.next()){
+                int userIDfromDB=result.getInt("UserID");
+                System.out.println("User ID: " +userIDfromDB);
+                outputUserID.setText("User ID: " +userIDfromDB);
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

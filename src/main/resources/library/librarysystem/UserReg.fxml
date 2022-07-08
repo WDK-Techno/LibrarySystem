@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.UserRegController">
    <children>
-      <TextField fx:id="user" disable="true" layoutX="262.0" layoutY="533.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
+      <TextField fx:id="outputUserID" disable="true" layoutX="262.0" layoutY="533.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>

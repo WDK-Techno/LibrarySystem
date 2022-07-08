@@ -250,7 +250,9 @@ public class SearchUserController implements Initializable {
                         "Email      :- "+emailFromDB+"\n"+
                         "Address    :- "+ addressFromDB+"\n";
 
-                store = print + "\n";
+//                store = print + "\n";
+                store = store.concat(print);
+                store = store.concat("\n");
 
                 System.out.println(
                         "User ID    :- " + userIDFromDB +"\n"+

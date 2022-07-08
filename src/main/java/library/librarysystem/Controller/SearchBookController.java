@@ -7,7 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 import library.librarysystem.DBConnection.DBHandler;
+
 
 import java.net.URL;
 import java.sql.Connection;
@@ -40,15 +42,26 @@ public class SearchBookController implements Initializable {
     private PreparedStatement pst;
 
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         handler= new DBHandler();
+
+
+
+
     }
 
 
     @FXML
     void searchBookFromAuthor(ActionEvent event) {
 
+
+        String collectOutPut;
+        String store="";
+        
         String author = authorInput.getText();
 
         connection = handler.getConnection();
@@ -78,31 +91,39 @@ public class SearchBookController implements Initializable {
                 String BookNameFromDB = result.getString("BookName");
                 String BookAuthorFromDB = result.getString("BookAuthor");
                 String BookCategoryFromDB = result.getString("BookCategory");
-
-                outPutTextArea.setText(
+                
+                collectOutPut =
                         "BookID   : " + BookIDFromFB +"\n" +
                                 "Name     : " + BookNameFromDB + "\n" +
                                 "Author   : " + BookAuthorFromDB + "\n" +
-                                "Category : " + BookCategoryFromDB + "\n\n" );
+                                "Category : " + BookCategoryFromDB + "\n";
+                
                 System.out.println(
                         "BookID   : " + BookIDFromFB +"\n" +
                                 "Name     : " + BookNameFromDB + "\n" +
                                 "Author   : " + BookAuthorFromDB + "\n" +
                                 "Category : " + BookCategoryFromDB + "\n\n");
-                }
+
+
+                store = store.concat(collectOutPut);
+                store = store.concat( "-------------------------------------\n");
+            }
+                
+
 
 
 
             if (found >= 1){
                 System.out.println("Search Completed");
-//                System.out.println("Hello " + name);
+
+                outPutTextArea.setText(store);
 
             }else {
                 System.out.println("Incorrect Input");
                 //Genarate pop error
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
-                alert.setContentText("User Name or Password Incorrect");
+                alert.setContentText("Not Found");
                 alert.show();
             }
 
@@ -114,6 +135,12 @@ public class SearchBookController implements Initializable {
 
     @FXML
     void searchBookfromBookName(ActionEvent event) {
+
+
+
+        String collectOutPut;
+        String store="";
+
         String name = bookNameInput.getText();
 
         connection = handler.getConnection();
@@ -144,22 +171,34 @@ public class SearchBookController implements Initializable {
                 String BookAuthorFromDB = result.getString("BookAuthor");
                 String BookCategoryFromDB = result.getString("BookCategory");
 
-                outPutTextArea.setText(
+
+                collectOutPut =
                         "BookID   : " + BookIDFromFB +"\n" +
                         "Name     : " + BookNameFromDB + "\n" +
                         "Author   : " + BookAuthorFromDB + "\n" +
-                        "Category : " + BookCategoryFromDB + "\n\n");
+                        "Category : " + BookCategoryFromDB + "\n\n" ;
+
+                System.out.println(
+                        "BookID   : " + BookIDFromFB +"\n" +
+                        "Name     : " + BookNameFromDB + "\n" +
+                        "Author   : " + BookAuthorFromDB + "\n" +
+                        "Category : " + BookCategoryFromDB + "\n\n") ;
+
+                store = store.concat(collectOutPut);
+                store = store.concat( "-------------------------------------\n");
+
             }
             if (found >= 1){
                 System.out.println("Search Completed");
-//                System.out.println("Hello " + name);
+//
+                outPutTextArea.setText(store);
 
             }else {
                 System.out.println("Incorrect Input");
                 //Genarate pop error
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
-                alert.setContentText("User Name or Password Incorrect");
+                alert.setContentText("Not Found");
                 alert.show();
             }
 
@@ -168,5 +207,15 @@ public class SearchBookController implements Initializable {
         }
     }
 
+
+    public void emptyAuthorField(MouseEvent mouseEvent) {
+
+        authorInput.setText("");
+    }
+
+    public void emptyBookField(MouseEvent mouseEvent) {
+
+        bookNameInput.setText("");
+    }
 
 }

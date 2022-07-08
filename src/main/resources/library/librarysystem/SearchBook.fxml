@@ -14,26 +14,26 @@
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField fx:id="bookNameInput" layoutX="298.0" layoutY="142.0" prefHeight="36.0" prefWidth="203.0" promptText="Book Name">
+      <TextField fx:id="bookNameInput" layoutX="298.0" layoutY="136.0" onMouseClicked="#emptyAuthorField" prefHeight="36.0" prefWidth="203.0" promptText="Book Name">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font></TextField>
-      <JFXButton fx:id="bookSearchBtn" layoutX="516.0" layoutY="143.0" onAction="#searchBookfromBookName" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
+      <JFXButton fx:id="bookSearchBtn" layoutX="516.0" layoutY="137.0" onAction="#searchBookfromBookName" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="authorInput" layoutX="298.0" layoutY="205.0" prefHeight="36.0" prefWidth="203.0" promptText="Author">
+      <TextField fx:id="authorInput" layoutX="298.0" layoutY="199.0" onMouseClicked="#emptyBookField" prefHeight="36.0" prefWidth="203.0" promptText="Author">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="authorSearchBtn" layoutX="516.0" layoutY="206.0" onAction="#searchBookFromAuthor" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
+      <JFXButton fx:id="authorSearchBtn" layoutX="516.0" layoutY="200.0" onAction="#searchBookFromAuthor" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea fx:id="outPutTextArea" disable="true" layoutX="89.0" layoutY="284.0" prefHeight="276.0" prefWidth="623.0">
+      <TextArea fx:id="outPutTextArea" editable="false" layoutX="152.0" layoutY="278.0" prefHeight="276.0" prefWidth="498.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="22.0" />
          </font></TextArea>

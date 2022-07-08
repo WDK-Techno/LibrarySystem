@@ -45,7 +45,9 @@ public class SearchUserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         handler= new DBHandler();
+        System.out.println("Program is starting");
     }
     public void searchUserFromNIC(ActionEvent event) {
 

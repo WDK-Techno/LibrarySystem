@@ -33,6 +33,9 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea fx:id="outPutTextArea" disable="true" layoutX="89.0" layoutY="284.0" prefHeight="276.0" prefWidth="623.0" />
+      <TextArea fx:id="outPutTextArea" disable="true" layoutX="89.0" layoutY="284.0" prefHeight="276.0" prefWidth="623.0">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="22.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>

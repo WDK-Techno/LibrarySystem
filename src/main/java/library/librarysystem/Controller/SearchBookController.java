@@ -49,6 +49,66 @@ public class SearchBookController implements Initializable {
     @FXML
     void searchBookFromAuthor(ActionEvent event) {
 
+        String author = authorInput.getText();
+
+        connection = handler.getConnection();
+
+        String getDetailsQuery = "SELECT * FROM book WHERE BookAuthor LIKE ?";
+
+        try {
+            pst = connection.prepareStatement(getDetailsQuery);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            pst.setString(1, "%" +author + "%");
+
+            ResultSet result = pst.executeQuery();
+
+
+            int found = 0;
+
+            while (result.next()) {
+                found = found + 1;
+//
+                String BookIDFromFB = result.getString("BookID");
+                String BookNameFromDB = result.getString("BookName");
+                String BookAuthorFromDB = result.getString("BookAuthor");
+                String BookCategoryFromDB = result.getString("BookCategory");
+
+                outPutTextArea.setText(
+                        "BookID   : " + BookIDFromFB +"\n" +
+                                "Name     : " + BookNameFromDB + "\n" +
+                                "Author   : " + BookAuthorFromDB + "\n" +
+                                "Category : " + BookCategoryFromDB + "\n\n" );
+                System.out.println(
+                        "BookID   : " + BookIDFromFB +"\n" +
+                                "Name     : " + BookNameFromDB + "\n" +
+                                "Author   : " + BookAuthorFromDB + "\n" +
+                                "Category : " + BookCategoryFromDB + "\n\n");
+                }
+
+
+
+            if (found >= 1){
+                System.out.println("Search Completed");
+//                System.out.println("Hello " + name);
+
+            }else {
+                System.out.println("Incorrect Input");
+                //Genarate pop error
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("User Name or Password Incorrect");
+                alert.show();
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -69,7 +129,7 @@ public class SearchBookController implements Initializable {
         }
 
         try {
-            pst.setString(1,name + "%");
+            pst.setString(1,"%" + name + "%");
 
             ResultSet result = pst.executeQuery();
 
@@ -78,22 +138,29 @@ public class SearchBookController implements Initializable {
 
             while (result.next()) {
                 found = found + 1;
+//
+                String BookIDFromFB = result.getString("BookID");
+                String BookNameFromDB = result.getString("BookName");
+                String BookAuthorFromDB = result.getString("BookAuthor");
+                String BookCategoryFromDB = result.getString("BookCategory");
 
-
-
-
+                outPutTextArea.setText(
+                        "BookID   : " + BookIDFromFB +"\n" +
+                        "Name     : " + BookNameFromDB + "\n" +
+                        "Author   : " + BookAuthorFromDB + "\n" +
+                        "Category : " + BookCategoryFromDB + "\n\n");
             }
             if (found >= 1){
-                System.out.println("Loggin Successfull");
+                System.out.println("Search Completed");
 //                System.out.println("Hello " + name);
 
             }else {
                 System.out.println("Incorrect Input");
-//                //Genarate pop error
-//                Alert alert = new Alert(Alert.AlertType.ERROR);
-//                alert.setHeaderText(null);
-//                alert.setContentText("User Name or Password Incorrect");
-//                alert.show();
+                //Genarate pop error
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("User Name or Password Incorrect");
+                alert.show();
             }
 
         } catch (SQLException e) {

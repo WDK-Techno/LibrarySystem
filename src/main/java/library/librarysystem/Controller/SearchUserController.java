@@ -1,5 +1,7 @@
 package library.librarysystem.Controller;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
@@ -7,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import library.librarysystem.DBConnection.DBHandler;
 
 import java.net.URL;
@@ -47,7 +50,19 @@ public class SearchUserController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         handler= new DBHandler();
-        System.out.println("Program is starting");
+
+        //chanage staring focuse from first input field to other one.
+        final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
+
+        userNameInput.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
+            if(newValue && firstTime.get()){
+                nameSearchBtn.requestFocus(); // Delegate the focus to container
+                firstTime.setValue(false); // Variable value changed for future references
+            }
+        });
+
+
+
     }
     public void searchUserFromNIC(ActionEvent event) {
 
@@ -286,4 +301,20 @@ public class SearchUserController implements Initializable {
     }
 
 
+    public void mouseClickName(MouseEvent mouseEvent) {
+        contactNoInput.setText("");
+        nicInput.setText("");
+    }
+
+    public void mouseClickNIC(MouseEvent mouseEvent) {
+        contactNoInput.setText("");
+        userNameInput.setText("");
+
+    }
+
+    public void mouseClickContact(MouseEvent mouseEvent) {
+        nicInput.setText("");
+        userNameInput.setText("");
+
+    }
 }

@@ -241,18 +241,18 @@ public class SearchUserController implements Initializable {
 //                                "Email           :- "+emailFromDB+"\n"+
 //                                "Address       :- "+ addressFromDB+"\n");
 
-                print = "User ID    :- " + userIDFromDB +"\n"+
+                print = "User ID        :- " + userIDFromDB +"\n"+
                         "User Name  :- " + userNameFromDB+"\n"+
-                        "D.O.B      :- "+ DOBfromDB +"\n"+
-                        "NIC        :- "+ nicFromDB+"\n"+
-                        "Gender     :- "+genderFromDB+"\n"+
+                        "D.O.B          :- "+ DOBfromDB +"\n"+
+                        "NIC             :- "+ nicFromDB+"\n"+
+                        "Gender       :- "+genderFromDB+"\n"+
                         "Contact No :- "+contactFromDB+"\n"+
-                        "Email      :- "+emailFromDB+"\n"+
-                        "Address    :- "+ addressFromDB+"\n";
+                        "Email           :- "+emailFromDB+"\n"+
+                        "Address       :- "+ addressFromDB+"\n";
 
 //                store = print + "\n";
                 store = store.concat(print);
-                store = store.concat("\n");
+                store = store.concat( "-------------------------------------\n");
 
                 System.out.println(
                         "User ID    :- " + userIDFromDB +"\n"+

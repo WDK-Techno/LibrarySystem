@@ -34,7 +34,7 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea fx:id="outPutTextArea" disable="true" layoutX="197.0" layoutY="346.0" prefHeight="203.0" prefWidth="426.0">
+      <TextArea fx:id="outPutTextArea" layoutX="197.0" layoutY="346.0" prefHeight="203.0" prefWidth="426.0">
          <font>
             <Font name="Segoe UI" size="20.0" />
          </font></TextArea>

@@ -197,6 +197,8 @@ public class SearchUserController implements Initializable {
 
     public void searchUserfromName(ActionEvent event) {
 
+        String print ;
+        String store = "";
         String name = userNameInput.getText();
 
         connection = handler.getConnection();
@@ -229,15 +231,28 @@ public class SearchUserController implements Initializable {
                 String emailFromDB = result.getString("Email");
                 String addressFromDB = result.getString("Address");
 
-                outPutTextArea.setText(
-                        "User ID        :- " + userIDFromDB +"\n"+
-                                "User Name  :- " + userNameFromDB+"\n"+
-                                "D.O.B          :- "+ DOBfromDB +"\n"+
-                                "NIC             :- "+ nicFromDB+"\n"+
-                                "Gender       :- "+genderFromDB+"\n"+
-                                "Contact No :- "+contactFromDB+"\n"+
-                                "Email           :- "+emailFromDB+"\n"+
-                                "Address       :- "+ addressFromDB+"\n");
+//                outPutTextArea.setText(
+//                        "User ID        :- " + userIDFromDB +"\n"+
+//                                "User Name  :- " + userNameFromDB+"\n"+
+//                                "D.O.B          :- "+ DOBfromDB +"\n"+
+//                                "NIC             :- "+ nicFromDB+"\n"+
+//                                "Gender       :- "+genderFromDB+"\n"+
+//                                "Contact No :- "+contactFromDB+"\n"+
+//                                "Email           :- "+emailFromDB+"\n"+
+//                                "Address       :- "+ addressFromDB+"\n");
+
+                print = "User ID        :- " + userIDFromDB +"\n"+
+                        "User Name  :- " + userNameFromDB+"\n"+
+                        "D.O.B          :- "+ DOBfromDB +"\n"+
+                        "NIC             :- "+ nicFromDB+"\n"+
+                        "Gender       :- "+genderFromDB+"\n"+
+                        "Contact No :- "+contactFromDB+"\n"+
+                        "Email           :- "+emailFromDB+"\n"+
+                        "Address       :- "+ addressFromDB+"\n";
+
+//                store = print + "\n";
+                store = store.concat(print);
+                store = store.concat( "-------------------------------------\n");
 
                 System.out.println(
                         "User ID    :- " + userIDFromDB +"\n"+
@@ -252,6 +267,7 @@ public class SearchUserController implements Initializable {
             if (found >= 1){
                 System.out.println("USER FOUND Successfull");
 //                System.out.println("Hello " + name);
+                outPutTextArea.setText(store);
 
             }else {
                 System.out.println("Check Again User Name!");

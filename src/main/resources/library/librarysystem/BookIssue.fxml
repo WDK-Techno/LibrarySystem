@@ -19,7 +19,7 @@
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="userIDCheck" layoutX="484.0" layoutY="135.0" onAction="#issueBookfFomUserID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="userIDCheck" layoutX="484.0" layoutY="135.0" onAction="#checkIssueFromUserID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="bookIDcheck" layoutX="482.0" layoutY="333.0" onAction="#issueBookfFomBookID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="bookIDcheck" layoutX="482.0" layoutY="333.0" onAction="#checkIssueFomBookID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

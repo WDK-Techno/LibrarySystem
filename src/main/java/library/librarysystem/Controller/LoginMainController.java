@@ -1,6 +1,8 @@
 package library.librarysystem.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,9 +17,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.layout.AnchorPane;
 
 public class LoginMainController implements Initializable{
 
+    @FXML
+    private AnchorPane backGround;
     @FXML
     private JFXButton loginButton;
 
@@ -35,6 +40,17 @@ public class LoginMainController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         handler = new DBHandler();
+        //chanage staring focuse from first input field to other one.
+        final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
+
+        userNameInput.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
+            if(newValue && firstTime.get()){
+                backGround.requestFocus(); // Delegate the focus to container
+                firstTime.setValue(false); // Variable value changed for future references
+            }
+        });
+
+
     }
 
 

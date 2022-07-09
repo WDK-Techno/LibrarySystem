@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import library.librarysystem.DBConnection.DBHandler;
 import javafx.scene.layout.AnchorPane;
@@ -61,32 +62,46 @@ public class StaffRegController implements Initializable {
         name = userNameInput.getText();
         password=passwordInput.getText();
 
-        //SAVING DATA TO DATABASE
+        if (name=="" || password == ""){
 
-        connection = handler.getConnection();
+            //Genarate pop error
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Input Can't Be Empty");
+            alert.show();
+        }else {
 
-        String insertQuery = "INSERT INTO Staff (UserName,Password)" + "VALUES (?,?)"; //create string including our query
+            //SAVING DATA TO DATABASE
 
-        try {
-            pst = connection.prepareStatement(insertQuery);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            connection = handler.getConnection();
+
+            String insertQuery = "INSERT INTO staff (UserName,Password)" + "VALUES (?,?)"; //create string including our query
+
+            try {
+                pst = connection.prepareStatement(insertQuery);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                //replace name and password for "values(?,?)" in inertQuery String
+                pst.setString(1,name);
+                pst.setString(2,password);
+
+                pst.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+            System.out.println("Hello " + name);
+            System.out.println("Your password is " + password);
+
+
         }
 
-        try {
-            //replace name and password for "values(?,?)" in inertQuery String
-            pst.setString(1,name);
-            pst.setString(2,password);
 
-            pst.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
-        System.out.println("Hello " + name);
-        System.out.println("Your password is " + password);
 
     }
 

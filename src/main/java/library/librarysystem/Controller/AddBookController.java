@@ -1,5 +1,7 @@
 package library.librarysystem.Controller;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.Initializable;
 
 
@@ -16,9 +18,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import library.librarysystem.DBConnection.DBHandler;
+import javafx.scene.layout.AnchorPane;
 
 public class AddBookController implements Initializable {
-
+    @FXML
+    private AnchorPane backGround;
     @FXML
     private JFXButton AddBookButton;
 
@@ -47,6 +51,16 @@ public class AddBookController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         handler = new DBHandler();
+
+        //chanage staring focuse from first input field to other one.
+        final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
+
+        BookName.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
+            if(newValue && firstTime.get()){
+                backGround.requestFocus(); // Delegate the focus to container
+                firstTime.setValue(false); // Variable value changed for future references
+            }
+        });
 
     }
 

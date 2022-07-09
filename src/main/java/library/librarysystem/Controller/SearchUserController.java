@@ -18,8 +18,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.layout.AnchorPane;
 
 public class SearchUserController implements Initializable {
+    @FXML
+    private AnchorPane backGround;
 
     @FXML
     private TextField contactNoInput;
@@ -56,7 +59,7 @@ public class SearchUserController implements Initializable {
 
         userNameInput.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
             if(newValue && firstTime.get()){
-                nameSearchBtn.requestFocus(); // Delegate the focus to container
+                backGround.requestFocus(); // Delegate the focus to container
                 firstTime.setValue(false); // Variable value changed for future references
             }
         });

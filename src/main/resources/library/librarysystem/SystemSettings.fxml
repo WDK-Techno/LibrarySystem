@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SystemSettingsController">
+<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SystemSettingsController">
    <children>
       <Text layoutX="228.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="System Settings">
          <font>

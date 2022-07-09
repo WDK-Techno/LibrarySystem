@@ -70,7 +70,6 @@ public class BookIssueController implements Initializable {
     public void issueBookfFomBookID(ActionEvent event) {
 
         String bookID = bookIDinput.getText();
-
         connection = handler.getConnection();
 
         String getDetailsQuery = "SELECT * FROM book WHERE BookID LIKE ?";

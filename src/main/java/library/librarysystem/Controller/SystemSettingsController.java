@@ -4,6 +4,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 
@@ -83,6 +84,17 @@ public class SystemSettingsController implements Initializable {
     void changeSystem(ActionEvent event) {
           String chargeUnit;
           String issueTime;
+
+          chargeUnit=overdueCharge.getText();
+          issueTime=issueTimeInput.getText();
+
+          if(chargeUnit=="" || issueTime==""){
+              //Genarate pop error
+              Alert alert = new Alert(Alert.AlertType.ERROR);
+              alert.setHeaderText(null);
+              alert.setContentText("Input Can't Be Empty");
+              alert.show();
+          }
 
           chargeUnit=overdueCharge.getText();
           issueTime=issueTimeInput.getText();

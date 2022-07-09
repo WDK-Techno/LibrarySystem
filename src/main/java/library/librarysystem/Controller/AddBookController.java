@@ -72,6 +72,7 @@ public class AddBookController implements Initializable {
         author = Author.getText();
         category=Category.getText();
 
+
         if(bookName==""||author==""||category==""){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);

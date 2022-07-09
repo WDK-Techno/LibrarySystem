@@ -47,11 +47,16 @@ public class BookIssueController implements Initializable {
     private PreparedStatement pst;
 
 
+    int foundbook = 0;
+    int founduser = 0;
+    String bookID;
+    String userID;
+    Boolean bookCanIssue;
+    Boolean userCanGetBook;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         handler= new DBHandler();
-
-
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 
@@ -64,14 +69,17 @@ public class BookIssueController implements Initializable {
 
     }
 
-    int foundbook = 0;
-    int founduser = 0;
-    @FXML
-    public void issueBookfFomBookID(ActionEvent event) {
 
-        String bookID = bookIDinput.getText();
+
+
+    @FXML
+    public void checkIssueFomBookID(ActionEvent event) {
+        bookInfoOutputTextArea.setText("");
+        bookID = bookIDinput.getText();
+
         connection = handler.getConnection();
 
+        //get details from Book Table
         String getDetailsQuery = "SELECT * FROM book WHERE BookID LIKE ?";
 
         try {
@@ -89,7 +97,7 @@ public class BookIssueController implements Initializable {
 
 
 
-
+            foundbook =0;
             while (result.next()) {
                 foundbook = foundbook + 1;
 //
@@ -110,6 +118,9 @@ public class BookIssueController implements Initializable {
                         "Category : " + BookCategoryFromDB + "\n\n");
             }
             if (foundbook == 1){
+
+                bookIDinput.setText("");//reset input field text
+
                 System.out.println("Book FOUND Successfull");
 
 //                System.out.println("Hello " + name);
@@ -127,17 +138,46 @@ public class BookIssueController implements Initializable {
             throw new RuntimeException(e);
         }
 
+        //get Details from book_issue Table
+        String getIssuDetailsQuery = "SELECT * FROM book_issue WHERE bookID = ? AND Received = ?";
+
+        try {
+            pst = connection.prepareStatement(getIssuDetailsQuery);
+
+            pst.setString(1,bookID);
+            pst.setString(2,"No");
+
+            ResultSet result2 = pst.executeQuery();
+
+            int found = 0;
+            bookCanIssue = false;
+            while (result2.next()){
+                found = found + 1;
+            }
+            if(found == 0){
+                bookCanIssue = true;
+                System.out.println("Book Can Issue");
+            }else {
+                System.out.println("Book Can not Issue");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
     @FXML
-    public void issueBookfFomUserID(ActionEvent event) {
+    public void checkIssueFromUserID(ActionEvent event) {
+        userInfoOutputTextArea.setText("");
+        userID = userIDinput.getText();
 
-        String uID = userIDinput.getText();
 
         connection = handler.getConnection();
 
-        String getDetailsQuery = "SELECT * FROM user WHERE UserID = ? ";
+
+        String getDetailsQuery = "SELECT * FROM user WHERE UserID = ?";
 
         try {
             pst = connection.prepareStatement(getDetailsQuery);
@@ -146,12 +186,12 @@ public class BookIssueController implements Initializable {
         }
 
         try {
-            pst.setString(1,uID);
+            pst.setString(1,userID);
 
             ResultSet result = pst.executeQuery();
 
 
-
+            founduser =0;
             while (result.next()){
                 founduser = founduser + 1;
                 String userNameFromDB = result.getString("UserName");
@@ -172,6 +212,9 @@ public class BookIssueController implements Initializable {
                                 "Gender     :- "+genderFromDB+"\n");
             }
             if (founduser == 1){
+
+                userIDinput.setText(""); //reset input feild text
+
                 System.out.println("USER FOUND Successfull");
 //                System.out.println("Hello " + name);
 
@@ -184,7 +227,32 @@ public class BookIssueController implements Initializable {
                 alert.show();
             }
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
+        //get Details from book_issue Table
+        String getIssuDetailsQuery = "SELECT * FROM book_issue WHERE UserID = ? AND Received = ?";
+
+        try {
+            pst = connection.prepareStatement(getIssuDetailsQuery);
+
+            pst.setString(1,userID);
+            pst.setString(2,"No");
+
+            ResultSet result2 = pst.executeQuery();
+
+            int found = 0;
+            userCanGetBook = false;
+            while (result2.next()){
+                found = found + 1;
+            }
+            if(found < 2){
+                userCanGetBook = true;
+                System.out.println("User Can get Book");
+            }else {
+                System.out.println("User Can not get Book");
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -195,15 +263,50 @@ public class BookIssueController implements Initializable {
     @FXML
     public void issueBook(ActionEvent event) {
 
-        if (founduser==1 && foundbook==1){
+        if (founduser==1 && foundbook==1 && bookCanIssue && userCanGetBook){
             System.out.printf("Issued");
+
+            System.out.println("UserID IN :" + userID);
+            System.out.println("BookID IN :" + bookID);
+
+            connection = handler.getConnection();
+
+
+
+            //Insert Data to DB
+            String insertDataQuary = "INSERT INTO book_issue(UserID,BookID,IssueDate,Received) VALUES (?,?,?,?)";
+
+            try {
+                pst = connection.prepareStatement(insertDataQuary);
+
+                pst.setString(1,userID);
+                pst.setString(2,bookID);
+                pst.setString(3, String.valueOf(java.time.LocalDate.now()));
+                pst.setString(4,"No");
+
+                pst.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         }
-        else {
+        else if (foundbook !=1 || founduser != 1){
             System.out.println("Check Again User ID and Book ID !!");
             //Genarate pop error
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("User ID and Book ID Incorrect");
+            alert.show();
+        }else if (!bookCanIssue){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Book Already Issued!");
+            alert.show();
+        } else if (!userCanGetBook) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("User Already Borrow 2 Books!");
             alert.show();
         }
 

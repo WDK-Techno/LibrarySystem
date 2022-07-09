@@ -14,32 +14,32 @@
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField layoutX="286.0" layoutY="192.0" prefHeight="50.0" prefWidth="238.0">
+      <TextField fx:id="overdueCharge" layoutX="280.0" layoutY="167.0" prefHeight="50.0" prefWidth="238.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="332.0" layoutY="444.0" prefHeight="55.0" prefWidth="135.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Change" textFill="WHITE">
+      <JFXButton fx:id="changeButton" layoutX="331.0" layoutY="419.0" onAction="#changeSystem" prefHeight="55.0" prefWidth="135.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Change" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="285.0" layoutY="142.0" prefHeight="50.0" prefWidth="285.0" text="Overdue Charge (Per Day)">
+      <Label layoutX="280.0" layoutY="116.0" prefHeight="50.0" prefWidth="285.0" text="Overdue Charge (Per Day)">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="192.0" prefHeight="50.0" prefWidth="33.0" text="Rs">
+      <Label layoutX="241.0" layoutY="167.0" prefHeight="50.0" prefWidth="33.0" text="Rs">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="285.0" layoutY="256.0" prefHeight="50.0" prefWidth="285.0" text="Book Issue Time Period">
+      <Label layoutX="286.0" layoutY="249.0" prefHeight="50.0" prefWidth="285.0" text="Book Issue Time Period">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="286.0" layoutY="306.0" prefHeight="50.0" prefWidth="238.0">
+      <TextField fx:id="issueTimeInput" layoutX="287.0" layoutY="306.0" prefHeight="50.0" prefWidth="238.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>

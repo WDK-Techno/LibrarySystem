@@ -250,6 +250,7 @@ public class BookIssueController implements Initializable {
             if(found < 2){
                 userCanGetBook = true;
                 System.out.println("User Can get Book");
+
             }else {
                 System.out.println("User Can not get Book");
             }

@@ -8,62 +8,67 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookReturnController">
+<AnchorPane fx:id="background" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookReturnController">
    <children>
       <Text layoutX="239.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Return">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="45.0" />
          </font>
       </Text>
-      <TextField layoutX="233.0" layoutY="74.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
+      <TextField fx:id="userIdInput" layoutX="233.0" layoutY="76.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="512.0" layoutY="74.0" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <JFXButton layoutX="512.0" layoutY="74.0" onAction="#checkUserFromID" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextArea disable="true" layoutX="233.0" layoutY="134.0" prefHeight="66.0" prefWidth="366.0" />
-      <TextField layoutX="233.0" layoutY="214.0" prefHeight="43.0" prefWidth="258.0" promptText="Book Id">
+      <TextArea fx:id="outputUserDetails" editable="false" layoutX="233.0" layoutY="119.0" prefHeight="98.0" prefWidth="366.0">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="16.0" />
+         </font></TextArea>
+      <TextField fx:id="bookIdInput" layoutX="233.0" layoutY="337.0" prefHeight="39.0" prefWidth="258.0" promptText="Select Book Id">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <TextArea disable="true" layoutX="233.0" layoutY="273.0" prefHeight="66.0" prefWidth="366.0" />
-      <JFXButton layoutX="512.0" layoutY="216.0" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+      <TextArea fx:id="outputBookDetails" editable="false" layoutX="233.0" layoutY="226.0" prefHeight="98.0" prefWidth="366.0">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="16.0" />
+         </font></TextArea>
+      <JFXButton layoutX="512.0" layoutY="337.0" onAction="#calculate" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField disable="true" layoutX="512.0" layoutY="353.0" prefHeight="43.0" prefWidth="86.0">
+      <TextField fx:id="overDueDateCountOutput" disable="true" layoutX="512.0" layoutY="386.0" prefHeight="43.0" prefWidth="86.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="316.0" layoutY="492.0" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
+      <JFXButton fx:id="returnBookButton" layoutX="331.0" layoutY="533.0" onAction="#returnBookProcess" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="233.0" layoutY="355.0" prefHeight="43.0" prefWidth="258.0" text="Overdue Date Count">
+      <Label layoutX="233.0" layoutY="386.0" prefHeight="43.0" prefWidth="258.0" text="Overdue Date Count">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="233.0" layoutY="426.0" prefHeight="43.0" prefWidth="258.0" text="Overdue Charge">
+      <Label layoutX="233.0" layoutY="457.0" prefHeight="43.0" prefWidth="258.0" text="Overdue Charge">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField disable="true" layoutX="512.0" layoutY="426.0" prefHeight="43.0" prefWidth="86.0">
+      <TextField fx:id="overdueChargeOutput" disable="true" layoutX="512.0" layoutY="457.0" prefHeight="43.0" prefWidth="86.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <Label layoutX="454.0" layoutY="428.0" prefHeight="39.0" prefWidth="44.0" text="Rs">
+      <Label layoutX="454.0" layoutY="459.0" prefHeight="39.0" prefWidth="44.0" text="Rs">
          <font>
             <Font size="20.0" />
          </font>

@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import library.librarysystem.DBConnection.DBHandler;
 
@@ -19,7 +21,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.scene.layout.AnchorPane;
 
 import static javafx.scene.paint.Color.*;
 
@@ -183,9 +184,11 @@ public class BookIssueController implements Initializable {
             if(found == 0){
                 bookCanIssue = true;
                 bookElegible.setFill(GREEN);
+                bookInfoOutputTextArea.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
                 System.out.println("Book Can Issue");
             }else {
                 bookElegible.setFill(RED);
+                bookInfoOutputTextArea.setBorder(new Border(new BorderStroke(RED, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
                 System.out.println("Book Can not Issue");
             }
 
@@ -279,10 +282,12 @@ public class BookIssueController implements Initializable {
             if(found < 2){
                 userCanGetBook = true;
                 userElegible.setFill(GREEN);
+                userInfoOutputTextArea.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
                 System.out.println("User Can get Book");
 
             }else {
                 userElegible.setFill(RED);
+                userInfoOutputTextArea.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
                 System.out.println("User Can not get Book");
             }
 

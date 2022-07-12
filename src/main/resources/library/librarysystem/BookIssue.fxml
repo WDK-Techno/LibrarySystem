@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="backGround" pickOnBounds="false" prefHeight="975.0" prefWidth="1425.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
    <children>
-      <Text layoutX="568.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ISSUE">
+      <Text fill="#00c0b1" layoutX="568.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ISSUE">
          <font>
             <Font name="Dubai Light" size="64.0" />
          </font>
@@ -20,7 +20,7 @@
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="userIDCheck" layoutX="496.0" layoutY="201.0" onAction="#checkIssueFromUserID" prefHeight="65.0" prefWidth="147.0" style="-fx-background-color: #4E80ED; -fx-border-color: white; -fx-background-radius: 25, 25;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="userIDCheck" layoutX="496.0" layoutY="201.0" onAction="#checkIssueFromUserID" prefHeight="65.0" prefWidth="147.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 25, 25;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -30,7 +30,7 @@
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="bookIDcheck" layoutX="1213.0" layoutY="203.0" onAction="#checkIssueFomBookID" prefHeight="61.0" prefWidth="150.0" style="-fx-background-color: #4E80ED; -fx-border-color: white; -fx-background-radius: 25,25;" text="Check" textFill="WHITE">
+      <JFXButton fx:id="bookIDcheck" layoutX="1213.0" layoutY="203.0" onAction="#checkIssueFomBookID" prefHeight="61.0" prefWidth="150.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 25,25;" text="Check" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -43,7 +43,7 @@
          <font>
             <Font size="15.0" />
          </font></TextArea>
-      <JFXButton fx:id="issueBook" layoutX="1214.0" layoutY="855.0" onAction="#issueBook" prefHeight="74.0" prefWidth="147.0" style="-fx-background-color: #4E80ED; -fx-border-color: white; -fx-background-radius: 15, 15;" text="ISSUE" textFill="WHITE">
+      <JFXButton fx:id="issueBook" layoutX="1214.0" layoutY="855.0" onAction="#issueBook" prefHeight="74.0" prefWidth="147.0" style="-fx-background-color: #00c0b1;  -fx-background-radius: 15, 15;" text="ISSUE" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

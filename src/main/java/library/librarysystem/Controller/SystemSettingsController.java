@@ -14,12 +14,12 @@ import library.librarysystem.DBConnection.DBHandler;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
+import library.librarysystem.Function.GetSettingValuesFromDB;
 
-public class SystemSettingsController implements Initializable {
+public class SystemSettingsController implements Initializable{
     @FXML
     private AnchorPane backGround;
 
@@ -41,7 +41,7 @@ public class SystemSettingsController implements Initializable {
         String charge=overdueCharge.getText();
         handler = new DBHandler();
 
-        //chanage staring focuse from first input field to other one.
+//        chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 
         overdueCharge.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
@@ -52,32 +52,14 @@ public class SystemSettingsController implements Initializable {
         });
 
 
-        connection =handler.getConnection();
-
-        String newquery="SELECT * FROM settings";
-
-        try {
-            pst = connection.prepareStatement(newquery);
-            //pst.setString(1,charge);
-
-            ResultSet result= pst.executeQuery();
-
-            while(result.next()){
-                Integer chargefromDB=result.getInt("chargeUnit");
-                Integer issueTimefromDB=result.getInt("issueTime");
 
 
-                System.out.println("Overdue Charge (Per Day): " +chargefromDB);
-                System.out.println("Book Issue Time Period: " +issueTimefromDB);
-                overdueCharge.setText(chargefromDB.toString());
-                issueTimeInput.setText(issueTimefromDB.toString());
-
-
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        //get Details from DB
+        GetSettingValuesFromDB settings = new GetSettingValuesFromDB();
+        System.out.println("Overdue Charge (Per Day): " + settings.overDueCharge);
+        System.out.println("Book Issue Time Period: " +settings.overDueDates);
+        overdueCharge.setText(Float.toString(settings.overDueCharge));
+        issueTimeInput.setText(Integer.toString(settings.overDueDates));
 
     }
     @FXML

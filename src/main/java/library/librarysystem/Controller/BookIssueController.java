@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 import library.librarysystem.DBConnection.DBHandler;
 
 import java.net.URL;
@@ -19,6 +20,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
+
+import static javafx.scene.paint.Color.*;
 
 public class BookIssueController implements Initializable {
 
@@ -42,6 +45,18 @@ public class BookIssueController implements Initializable {
     @FXML
     private TextArea userInfoOutputTextArea;
 
+    @FXML
+    private Rectangle bookElegible;
+
+    @FXML
+    private Rectangle bookNotElegible;
+
+    @FXML
+    private Rectangle userElegible;
+
+    @FXML
+    private Rectangle userNotElegible;
+
     private DBHandler handler;
     private Connection connection;
     private PreparedStatement pst;
@@ -54,8 +69,16 @@ public class BookIssueController implements Initializable {
     Boolean bookCanIssue;
     Boolean userCanGetBook;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+//        userElegible.setWidth(0);
+//        userNotElegible.setWidth(0);
+//        bookElegible.setWidth(0);
+//        bookNotElegible.setWidth(0);
+
         handler= new DBHandler();
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -119,6 +142,8 @@ public class BookIssueController implements Initializable {
             }
             if (foundbook == 1){
 
+
+
                 bookIDinput.setText("");//reset input field text
 
                 System.out.println("Book FOUND Successfull");
@@ -126,6 +151,7 @@ public class BookIssueController implements Initializable {
 //                System.out.println("Hello " + name);
 
             }else {
+                bookElegible.setFill(GRAY);
                 System.out.println("Incorrect BookID");
                 //Genarate pop error
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -156,8 +182,10 @@ public class BookIssueController implements Initializable {
             }
             if(found == 0){
                 bookCanIssue = true;
+                bookElegible.setFill(GREEN);
                 System.out.println("Book Can Issue");
             }else {
+                bookElegible.setFill(RED);
                 System.out.println("Book Can not Issue");
             }
 
@@ -219,6 +247,7 @@ public class BookIssueController implements Initializable {
 //                System.out.println("Hello " + name);
 
             }else {
+
                 System.out.println("Check Again User ID !!");
                 //Genarate pop error
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -249,9 +278,11 @@ public class BookIssueController implements Initializable {
             }
             if(found < 2){
                 userCanGetBook = true;
+                userElegible.setFill(GREEN);
                 System.out.println("User Can get Book");
 
             }else {
+                userElegible.setFill(RED);
                 System.out.println("User Can not get Book");
             }
 

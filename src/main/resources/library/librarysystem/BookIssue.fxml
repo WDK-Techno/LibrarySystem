@@ -3,12 +3,14 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" pickOnBounds="false" prefHeight="975.0" prefWidth="1425.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
+<AnchorPane fx:id="backGround" pickOnBounds="false" prefHeight="975.0" prefWidth="1425.0"  xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
    <children>
       <Text fill="#00c0b1" layoutX="568.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ISSUE">
          <font>
@@ -48,10 +50,10 @@
             <Font size="24.0" />
          </font>
       </JFXButton>
-      <Rectangle fx:id="userElegible" arcHeight="5.0" arcWidth="5.0" fill="#25eb2f" height="37.0" layoutX="313.0" layoutY="790.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
-      <Rectangle fx:id="bookElegible" arcHeight="5.0" arcWidth="5.0" fill="#25eb2f" height="37.0" layoutX="1018.0" layoutY="793.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
-      <Rectangle fx:id="userNotElegible" arcHeight="5.0" arcWidth="5.0" fill="RED" height="37.0" layoutX="313.0" layoutY="790.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
-      <Rectangle fx:id="bookNotElegible" arcHeight="5.0" arcWidth="5.0" fill="RED" height="37.0" layoutX="1018.0" layoutY="793.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
+      <Rectangle fx:id="userElegible" arcHeight="20.0" arcWidth="20.0" fill="#ebebeb" height="37.0" layoutX="313.0" layoutY="790.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
+      <Rectangle fx:id="bookElegible" arcHeight="20.0" arcWidth="20.0" fill="#ebebeb" height="37.0" layoutX="1018.0" layoutY="793.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
+      <Rectangle fx:id="userNotElegible" arcHeight="20.0" arcWidth="20.0" fill="RED" height="37.0" layoutX="313.0" layoutY="790.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="90.0" />
+      <Rectangle fx:id="bookNotElegible" arcHeight="20.0" arcWidth="20.0" fill="RED" height="37.0" layoutX="1018.0" layoutY="793.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="90.0" />
       <Text layoutX="52.0" layoutY="821.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Eligibility :">
          <font>
             <Font size="36.0" />
@@ -62,5 +64,10 @@
             <Font size="36.0" />
          </font>
       </Text>
+      <ImageView fitHeight="137.0" fitWidth="269.0" layoutX="1119.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -17,8 +17,11 @@ public class LibraryApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LibraryApp.class.getResource("StaffReg.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        FXMLLoader fxmlLoader = new FXMLLoader(LibraryApp.class.getResource("BookIssue.fxml"));
+  //      Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 1425, 975);
+
+
 //        Scene scene = new Scene(fxmlLoader.load(), 300, 400); //for logginMain
 //        Parent root = FXMLLoader.load(getClass().getResource("staffReg.fxml")); //2nd method
 //        Group root = new Group(stage);

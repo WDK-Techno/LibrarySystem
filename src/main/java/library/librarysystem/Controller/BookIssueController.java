@@ -27,7 +27,7 @@ import static javafx.scene.paint.Color.*;
 public class BookIssueController implements Initializable {
 
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
     @FXML
     private JFXButton bookIDcheck;
 

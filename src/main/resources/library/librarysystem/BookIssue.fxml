@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="backGround" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
+<BorderPane fx:id="backGround" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
    <center>
       <BorderPane>
          <left>
-            <VBox alignment="CENTER" prefHeight="851.0" prefWidth="730.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
@@ -36,7 +36,7 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <TextArea fx:id="userInfoOutputTextArea" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" pickOnBounds="false" prefHeight="463.0" prefWidth="310.0" scaleShape="false" style="-fx-background-radius: 20,20; -fx-border-radius: 20,20;" styleClass="text-area">
+                  <TextArea fx:id="userInfoOutputTextArea" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" pickOnBounds="false" prefWidth="310.0" scaleShape="false" style="-fx-background-radius: 20,20; -fx-border-radius: 20,20;" styleClass="text-area">
                      <font>
                         <Font name="DejaVuMathTeXGyre-Regular" size="15.0" />
                      </font>
@@ -54,12 +54,12 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets left="30.0" right="30.0" />
+                  <Insets left="80.0" right="30.0" />
                </padding>
             </VBox>
          </left>
          <right>
-            <VBox alignment="CENTER" prefHeight="851.0" prefWidth="730.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
@@ -75,7 +75,7 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <TextArea fx:id="bookInfoOutputTextArea" editable="false" prefHeight="464.0" prefWidth="619.0" style="-fx-border-radius: 20, 20; -fx-background-radius: 20,20;" styleClass="text-area">
+                  <TextArea fx:id="bookInfoOutputTextArea" editable="false" prefWidth="310.0" style="-fx-border-radius: 20, 20; -fx-background-radius: 20,20;" styleClass="text-area">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -93,7 +93,7 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets left="30.0" right="30.0" />
+                  <Insets left="30.0" right="80.0" />
                </padding>
             </VBox>
          </right>

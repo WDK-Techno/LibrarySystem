@@ -1,51 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
-   <children>
-      <Text layoutX="272.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Issue">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
-         </font>
-      </Text>
-      <TextField fx:id="userIDinput" layoutX="266.0" layoutY="134.0" onMouseClicked="#emtyBookId" prefHeight="36.0" prefWidth="203.0" promptText="User ID">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="userIDCheck" layoutX="484.0" layoutY="135.0" onAction="#checkIssueFromUserID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextField fx:id="bookIDinput" layoutX="264.0" layoutY="332.0" onMouseClicked="#emptyUserID" prefHeight="36.0" prefWidth="203.0" promptText="BookID">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="bookIDcheck" layoutX="482.0" layoutY="333.0" onAction="#checkIssueFomBookID" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextArea fx:id="userInfoOutputTextArea" editable="false" layoutX="263.0" layoutY="193.0" prefHeight="108.0" prefWidth="303.0">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="15.0" />
-         </font></TextArea>
-      <TextArea fx:id="bookInfoOutputTextArea" editable="false" layoutX="263.0" layoutY="387.0" prefHeight="99.0" prefWidth="303.0">
-         <font>
-            <Font size="15.0" />
-         </font></TextArea>
-      <JFXButton fx:id="issueBook" layoutX="359.0" layoutY="519.0" onAction="#issueBook" prefHeight="49.0" prefWidth="110.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Done" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="backGround" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
+   <center>
+      <BorderPane>
+         <left>
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <TextField fx:id="userIDinput" onMouseClicked="#emtyBookId" prefHeight="65.0" prefWidth="425.0" promptText="User ID" style=" -fx-background-radius: 15, 15;">
+                           <font>
+                              <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="userIDCheck" onAction="#checkIssueFromUserID" prefHeight="66.0" prefWidth="231.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 25, 25;" text="Check" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <TextArea fx:id="userInfoOutputTextArea" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" pickOnBounds="false" prefWidth="310.0" scaleShape="false" style="-fx-background-radius: 20,20; -fx-border-radius: 20,20;" styleClass="text-area">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="15.0" />
+                     </font>
+                  </TextArea>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Eligibility :">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                        <Rectangle fx:id="userElegible" arcHeight="20.0" arcWidth="20.0" fill="#ebebeb" height="37.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
+                        <Rectangle fx:id="userNotElegible" arcHeight="20.0" arcWidth="20.0" fill="RED" height="37.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="90.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="80.0" right="30.0" />
+               </padding>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <TextField fx:id="bookIDinput" onMouseClicked="#emptyUserID" prefHeight="65.0" prefWidth="425.0" promptText="BookID" style=" -fx-background-radius: 15, 15;">
+                           <font>
+                              <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="bookIDcheck" onAction="#checkIssueFomBookID" prefHeight="66.0" prefWidth="231.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 25,25;" text="Check" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="bookInfoOutputTextArea" editable="false" prefWidth="310.0" style="-fx-border-radius: 20, 20; -fx-background-radius: 20,20;" styleClass="text-area">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextArea>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Eligibility :">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                        <Rectangle fx:id="bookElegible" arcHeight="20.0" arcWidth="20.0" fill="#ebebeb" height="37.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="90.0" />
+                        <Rectangle fx:id="bookNotElegible" arcHeight="20.0" arcWidth="20.0" fill="RED" height="37.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="90.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="80.0" />
+               </padding>
+            </VBox>
+         </right>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="issueBook" onAction="#issueBook" prefHeight="74.0" prefWidth="147.0" style="-fx-background-color: #00c0b1;  -fx-background-radius: 15, 15;" text="ISSUE" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" right="40.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+   <top>
+      <BorderPane prefHeight="154.0" prefWidth="664.0" BorderPane.alignment="CENTER">
+         <center>
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ISSUE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Dubai Light" size="64.0" />
+               </font>
+            </Text>
+         </center>
+         <right>
+            <HBox alignment="CENTER_LEFT" prefHeight="154.0" prefWidth="310.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="113.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </right>
+         <left>
+            <HBox prefHeight="154.0" prefWidth="230.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+   </top>
+</BorderPane>

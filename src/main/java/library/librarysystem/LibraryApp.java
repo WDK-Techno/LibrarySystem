@@ -22,14 +22,14 @@ public class LibraryApp extends Application {
    //     Scene scene = new Scene(fxmlLoader.load(), 1425, 975);
 
 
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1010); //for logginMain
+        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080); //for logginMain
 //        Parent root = FXMLLoader.load(getClass().getResource("staffReg.fxml")); //2nd method
 //        Group root = new Group(stage);
         stage.setTitle("Library Management System");
 //        stage.setScene(new Scene(root)); //2nd method
         stage.setScene(scene);
         stage.show();
-        stage.setMaximized(false);
+        stage.setMaximized(true);
         stage.setResizable(true);// avoid reesize window
         stage.setFullScreen(false);
 

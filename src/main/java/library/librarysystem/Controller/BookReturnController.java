@@ -53,7 +53,7 @@ public class BookReturnController implements Initializable {
 
     private DBHandler handler;
     private Connection connection;
-    private PreparedStatement pst1,pst2,pst3;
+    private PreparedStatement pst1,pst2,pst3,pst;
     private ShowErrorMessage error;
 
     int foundbook = 0;
@@ -308,6 +308,26 @@ public class BookReturnController implements Initializable {
 
         if (bookReadyToReturn){
             System.out.println("Processing");
+
+           connection = handler.getConnection();
+
+           String changeQuery = "UPDATE book_issue SET Received = ? , ReceivedDate = ? WHERE BookID = ?";
+
+            try {
+                pst = connection.prepareStatement(changeQuery);
+
+                pst.setString(1,"Yes");
+                pst.setString(2, String.valueOf(java.time.LocalDate.now()));
+                pst.setString(3, String.valueOf(selectedBookID));
+
+                pst.executeUpdate();
+
+                System.out.println("Book Return Complete");
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         }
         else {
 

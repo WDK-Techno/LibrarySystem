@@ -8,8 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.*;
 import library.librarysystem.DBConnection.DBHandler;
+import library.librarysystem.Function.DateDifferent;
 import library.librarysystem.Function.GetSettingValuesFromDB;
 import library.librarysystem.Function.ShowErrorMessage;
 
@@ -19,6 +20,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.GREEN;
+import static javafx.scene.paint.Color.RED;
 
 
 public class BookReturnController implements Initializable {
@@ -50,16 +54,18 @@ public class BookReturnController implements Initializable {
     private DBHandler handler;
     private Connection connection;
     private PreparedStatement pst1,pst2,pst3;
-    private GetSettingValuesFromDB settings;
     private ShowErrorMessage error;
 
     int foundbook = 0;
     int founduser = 0;
-    String bookID;
     String userID;
+
+    int selectedBookID=0;
 
     Boolean bookIsIssued = false;
     Boolean userCanHandOverBooks = false;
+
+    Boolean bookReadyToReturn = false;
 
     int[] userBorrowedBookIDs = new int[2];
     String[] issueDates = new String[2];
@@ -70,7 +76,6 @@ public class BookReturnController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         handler = new DBHandler();
-        settings = new GetSettingValuesFromDB();
         error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
@@ -90,12 +95,14 @@ public class BookReturnController implements Initializable {
     @FXML
     void checkUserFromID(ActionEvent event) {
 
+
         //clear input other input fields
         bookIdInput.setText("");
         overdueChargeOutput.setText("");
         overDueDateCountOutput.setText("");
 
         userCanHandOverBooks = false;
+        bookReadyToReturn = false;
         outputUserDetails.setText("");
         outputBookDetails.setText("");
         userID = userIdInput.getText();
@@ -231,8 +238,11 @@ public class BookReturnController implements Initializable {
     }
 
 
+
     @FXML
     void calculate(ActionEvent event) {
+
+        bookReadyToReturn=false;
 
         //check whether input field empty or not
         if (bookIdInput.getText()==""){
@@ -242,9 +252,9 @@ public class BookReturnController implements Initializable {
         else {
 
 
-            int selectedBookID =Integer.parseInt(bookIdInput.getText());
+            selectedBookID =Integer.parseInt(bookIdInput.getText());
             if (userCanHandOverBooks) {
-                Boolean correctInput =false;
+                boolean correctInput =false;
                 int index =0;
                 for(int i=0;i<2;i++){
                     if (selectedBookID==userBorrowedBookIDs[i]){
@@ -254,6 +264,28 @@ public class BookReturnController implements Initializable {
                 }
                 if (correctInput) {
                     System.out.println("Issue Date : " + issueDates[index]);
+
+                    DateDifferent diff = new DateDifferent();
+                    int dateCount =diff.findDifferent(issueDates[index]);
+
+                    overDueDateCountOutput.setText(String.valueOf(dateCount));
+
+                    GetSettingValuesFromDB settings = new GetSettingValuesFromDB();
+                    if (dateCount>settings.overDueDates){
+                        System.out.println("Due Date is passed ");
+                        overDueDateCountOutput.setBorder(new Border(new BorderStroke(RED, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+
+                        float overDueCharge = dateCount * settings.overDueCharge;
+                        overdueChargeOutput.setText(String.valueOf(overDueCharge));
+
+                    }else {
+
+                        overDueDateCountOutput.setBorder(new Border(new BorderStroke(GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+
+                        overdueChargeOutput.setText("0.00");
+                    }
+
+                    bookReadyToReturn = true;
                     
 
                 } else {
@@ -273,6 +305,15 @@ public class BookReturnController implements Initializable {
 
     @FXML
     void returnBookProcess(ActionEvent event) {
+
+        if (bookReadyToReturn){
+            System.out.println("Processing");
+        }
+        else {
+
+            System.out.println("Cannot process!");
+            error.show("Cannot process!");
+        }
 
     }
 

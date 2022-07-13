@@ -6,26 +6,53 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.LoginMainController">
-   <children>
-      <TextField fx:id="userNameInput" layoutX="60.0" layoutY="92.0" prefHeight="37.0" prefWidth="179.0" promptText="User Name" />
-      <JFXButton fx:id="loginButton" layoutX="94.0" layoutY="263.0" onAction="#loginToSystem" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #2196f3;" text="Login" textFill="WHITE">
-         <font>
-            <Font name="DejaVu Serif Bold" size="13.0" />
-         </font>
-      </JFXButton>
-      <PasswordField fx:id="passwordInput" layoutX="59.0" layoutY="163.0" prefHeight="38.0" prefWidth="179.0" promptText="Password" />
-      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="22.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Contacts_52px.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="22.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Lock%202_64px.png" />
-         </image>
-      </ImageView>
-   </children>
-</AnchorPane>
+
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.LoginMainController">
+   <center>
+      <BorderPane>
+         <center>
+            <AnchorPane fx:id="backGround" prefHeight="1012.0" prefWidth="1922.0">
+               <children>
+                  <ImageView fitHeight="1135.0" fitWidth="1924.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@login%20background.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="652.0" layoutY="160.0">
+                     <children>
+                        <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="700.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="610.0" />
+                        <TextField fx:id="userNameInput" layoutX="174.0" layoutY="238.0" prefHeight="61.0" prefWidth="331.0" promptText="User Name" />
+                        <JFXButton fx:id="loginButton" layoutX="235.0" layoutY="519.0" onAction="#loginToSystem" prefHeight="78.0" prefWidth="158.0" style="-fx-background-color: #2196f3; -fx-border-radius: 100,100; -fx-background-radius: 100,100;" text="Login" textFill="WHITE">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <PasswordField fx:id="passwordInput" layoutX="166.0" layoutY="390.0" prefHeight="58.0" prefWidth="339.0" promptText="Password" />
+                        <ImageView fitHeight="62.0" fitWidth="66.0" layoutX="85.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/Contacts_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="72.0" fitWidth="90.0" layoutX="72.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/Lock%202_64px.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#00c0b1" layoutX="146.0" layoutY="68.203125" strokeType="OUTSIDE" strokeWidth="0.0" text="SYSTEM LOGIN" wrappingWidth="354.13671875">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

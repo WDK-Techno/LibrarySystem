@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="backGround" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
+<BorderPane fx:id="backGround" prefHeight="850.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.BookIssueController">
    <center>
       <BorderPane>
          <left>
@@ -114,7 +114,7 @@
       </BorderPane>
    </center>
    <top>
-      <BorderPane prefHeight="154.0" prefWidth="664.0" BorderPane.alignment="CENTER">
+      <BorderPane BorderPane.alignment="CENTER">
          <center>
             <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ISSUE" BorderPane.alignment="CENTER">
                <font>
@@ -127,7 +127,7 @@
                <children>
                   <ImageView fitHeight="113.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@logo.png" />
+                        <Image url="@Images/logo.png" />
                      </image>
                   </ImageView>
                </children>

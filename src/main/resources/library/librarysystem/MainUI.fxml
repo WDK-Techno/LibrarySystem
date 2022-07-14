@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.MainUIController">
+   <left>
+      <BorderPane prefWidth="257.0" style="-fx-background-color: #00c0b1;" BorderPane.alignment="CENTER">
+         <bottom>
+            <ImageView fitHeight="119.0" fitWidth="257.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@Images/logo.png" />
+               </image>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00c0b1;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="Main" textFill="WHITE">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="SuviTilin" textFill="WHITE">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </left>
+   <top>
+      <BorderPane prefHeight="55.0" style="-fx-background-color: #00a6a3;" BorderPane.alignment="CENTER">
+         <right>
+            <JFXButton prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #d8ebea;" text="Log Out" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="11.0" />
+               </BorderPane.margin>
+            </JFXButton>
+         </right>
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Galigamuwa Public Library" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="31.0" />
+               </font>
+            </Text>
+         </center>
+         <left>
+            <HBox prefHeight="43.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Contacts_52px.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="83.0" text="Kavindra">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </left></BorderPane>
+   </top>
+   <center>
+      <AnchorPane fx:id="loadpagepane" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

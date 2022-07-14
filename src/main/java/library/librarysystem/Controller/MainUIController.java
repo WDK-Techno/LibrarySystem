@@ -47,7 +47,10 @@ public class MainUIController implements Initializable {
 
     private void loadChildPage(){
         try {
-            home = FXMLLoader.load(LibraryApp.class.getResource("OverdueDateUser.fxml"));
+
+
+           home = FXMLLoader.load(LibraryApp.class.getResource("BookIssue.fxml"));
+
             setNode(home);
         } catch (IOException e) {
             throw new RuntimeException(e);

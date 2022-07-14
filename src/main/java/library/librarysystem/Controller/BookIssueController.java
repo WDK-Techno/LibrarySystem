@@ -344,9 +344,11 @@ public class BookIssueController implements Initializable {
         }
         else if (foundbook !=1 || founduser != 1){
             System.out.println("Check Again User ID and Book ID !!");
-            
-            error.show("User ID and Book ID Incorrect");
-
+            //Genarate pop error
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("User ID and Book ID Incorrect");
+            alert.show();
         }else if (!bookCanIssue){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);

@@ -43,7 +43,7 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="overDueDateCountOutput" disable="true" layoutX="512.0" layoutY="386.0" prefHeight="43.0" prefWidth="86.0">
+      <TextField fx:id="overDueDateCountOutput" editable="false" layoutX="512.0" layoutY="386.0" prefHeight="43.0" prefWidth="86.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
@@ -53,7 +53,7 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="233.0" layoutY="386.0" prefHeight="43.0" prefWidth="258.0" text="Overdue Date Count">
+      <Label layoutX="233.0" layoutY="386.0" prefHeight="43.0" prefWidth="258.0" text="Return Date Count">
          <font>
             <Font size="20.0" />
          </font>
@@ -63,7 +63,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="overdueChargeOutput" disable="true" layoutX="512.0" layoutY="457.0" prefHeight="43.0" prefWidth="86.0">
+      <TextField fx:id="overdueChargeOutput" editable="false" layoutX="512.0" layoutY="457.0" prefHeight="43.0" prefWidth="86.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>

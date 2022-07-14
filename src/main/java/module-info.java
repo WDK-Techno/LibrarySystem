@@ -4,6 +4,7 @@ module library.librarysystem {
     requires java.sql;
     requires mysql.connector.java;
     requires com.jfoenix;
+    requires java.mail;
 
 
     opens library.librarysystem to javafx.fxml;

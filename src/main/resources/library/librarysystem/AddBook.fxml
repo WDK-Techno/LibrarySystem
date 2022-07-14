@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AddBookController">
-   <children>
-      <TextField id="Book_ID" fx:id="BookID" disable="true" layoutX="323.0" layoutY="410.0" promptText="Book ID" />
-      <TextField id="Book_Name" fx:id="BookName" layoutX="326.0" layoutY="163.0" promptText="Book Name" />
-      <TextField id="Author" fx:id="Author" layoutX="324.0" layoutY="231.0" promptText="Author" />
-      <TextField id="Category" fx:id="Category" layoutX="326.0" layoutY="288.0" promptText="Category" />
-      <JFXButton fx:id="AddBookButton" layoutX="350.0" layoutY="360.0" onAction="#Bookadd" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #6371EF;" text="Button" />
-      <Text layoutX="314.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
-         <font>
-            <Font name="Arial" size="40.0" />
-         </font>
-      </Text>
-   </children>
-</AnchorPane>
+
+<BorderPane prefHeight="850.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AddBookController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name : " wrappingWidth="130.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="Book_Name" fx:id="BookName" prefHeight="40.0" prefWidth="500.0" promptText="Book Name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Author Name : " wrappingWidth="130.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="Author" fx:id="Author" prefHeight="40.0" prefWidth="500.0" promptText="Author" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Category : " wrappingWidth="130.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="Category" fx:id="Category" prefHeight="40.0" prefWidth="500.0" promptText="Category" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton fx:id="AddBookButton" onAction="#Bookadd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20;" text="Add Book" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID will Show Here">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField id="Book_ID" fx:id="BookID" disable="true" promptText="Book ID" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
+               <font>
+                  <Font name="Arial" size="40.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

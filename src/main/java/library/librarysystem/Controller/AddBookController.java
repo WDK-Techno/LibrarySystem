@@ -17,12 +17,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
 import javafx.scene.layout.AnchorPane;
 
 public class AddBookController implements Initializable {
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
     @FXML
     private JFXButton AddBookButton;
 

@@ -49,7 +49,7 @@ public class MainUIController implements Initializable {
         try {
 
 
-           home = FXMLLoader.load(LibraryApp.class.getResource("BookIssue.fxml"));
+           home = FXMLLoader.load(LibraryApp.class.getResource("AddBook.fxml"));
 
             setNode(home);
         } catch (IOException e) {

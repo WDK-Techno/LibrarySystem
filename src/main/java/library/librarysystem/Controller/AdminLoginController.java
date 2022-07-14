@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
+import library.librarysystem.Function.ShowErrorMessage;
 
 public class AdminLoginController implements Initializable {
 
@@ -35,10 +36,13 @@ public class AdminLoginController implements Initializable {
     private Connection connection;
     private PreparedStatement pst;
 
+    private ShowErrorMessage error;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         handler = new DBHandler();
+        error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -62,11 +66,8 @@ public class AdminLoginController implements Initializable {
         password = userInputPassword.getText();
 
         if(password==""){
-            //Genarate pop error
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Input Can't Be Empty");
-            alert.show();
+            error.show("Input Can not be Empty");
+            System.out.println("Input Can not be Empty");
         }else{
             connection = handler.getConnection();
 

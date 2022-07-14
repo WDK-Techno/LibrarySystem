@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import library.librarysystem.DBConnection.DBHandler;
 import javafx.scene.layout.AnchorPane;
+import library.librarysystem.Function.ShowErrorMessage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -35,11 +36,14 @@ public class StaffRegController implements Initializable {
     private Connection connection;
     private PreparedStatement pst;
 
+    private ShowErrorMessage error;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //database
         handler = new DBHandler();
+        error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -64,11 +68,8 @@ public class StaffRegController implements Initializable {
 
         if (name=="" || password == ""){
 
-            //Genarate pop error
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Input Can't Be Empty");
-            alert.show();
+            error.show("Input Can not be Empty");
+            System.out.println("Input Can not be Empty");
         }else {
 
             //SAVING DATA TO DATABASE

@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
 import javafx.scene.layout.AnchorPane;
+import library.librarysystem.Function.ShowErrorMessage;
 
 public class AddBookController implements Initializable {
     @FXML
@@ -49,9 +50,13 @@ public class AddBookController implements Initializable {
    private PreparedStatement pst,pst2;
 
 
+   private ShowErrorMessage error;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         handler = new DBHandler();
+        error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -75,11 +80,8 @@ public class AddBookController implements Initializable {
 
 
         if(bookName==""||author==""||category==""){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Fill all filed");
-            alert.show();
-
+            error.show("Input Can not be Empty");
+            System.out.println("Input Can not be Empty");
         }
         else {
             connection = handler.getConnection();

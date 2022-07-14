@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.Initializable;
 import library.librarysystem.DBConnection.DBHandler;
+import library.librarysystem.Function.ShowErrorMessage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -45,10 +46,13 @@ public class OverdueDateUserController implements Initializable {
     private Connection connection;
     private PreparedStatement pst;
 
+    private ShowErrorMessage error;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         handler = new DBHandler();
+        error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -68,11 +72,8 @@ public class OverdueDateUserController implements Initializable {
         enteredDate=inputDate.getText();
 
         if(enteredDate==""){
-            //Genarate pop error
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Input Can't Be Empty");
-            alert.show();
+            error.show("Input Can not be Empty");
+            System.out.println("Input Can not be Empty");
         }else{
             connection = handler.getConnection();
 

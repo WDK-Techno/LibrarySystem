@@ -1,52 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchUserController">
-   <children>
-      <Text layoutX="272.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search User">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
-         </font>
-      </Text>
-      <TextField fx:id="userNameInput" layoutX="266.0" layoutY="142.0" onMouseClicked="#mouseClickName" prefHeight="36.0" prefWidth="203.0" promptText="Name">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="nameSearchBtn" layoutX="484.0" layoutY="143.0" onAction="#searchUserfromName" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextField fx:id="nicInput" layoutX="266.0" layoutY="205.0" onMouseClicked="#mouseClickNIC" prefHeight="36.0" prefWidth="203.0" promptText="NIC">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="nicSearchBtn" layoutX="484.0" layoutY="206.0" onAction="#searchUserFromNIC" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextArea fx:id="outPutTextArea" editable="false" layoutX="130.0" layoutY="330.0" prefHeight="223.0" prefWidth="539.0">
+
+<BorderPane prefHeight="850.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchUserController">
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="userNameInput" onMouseClicked="#mouseClickName" prefHeight="50.0" prefWidth="285.0" promptText="Name" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton fx:id="nameSearchBtn" onAction="#searchUserfromName" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="nicInput" onMouseClicked="#mouseClickNIC" prefHeight="50.0" prefWidth="285.0" promptText="NIC" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton fx:id="nicSearchBtn" onAction="#searchUserFromNIC" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="contactNoInput" onMouseClicked="#mouseClickContact" prefHeight="50.0" prefWidth="285.0" promptText="Contact Number" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton fx:id="contactNoSearchBtn1" onAction="#searchUserFromContactNo" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Search User">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="45.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <TextArea fx:id="outPutTextArea" editable="false" style="-fx-background-radius: 20; -fx-border-radius: 20;" BorderPane.alignment="CENTER">
          <font>
             <Font name="Segoe UI" size="20.0" />
-         </font></TextArea>
-      <TextField fx:id="contactNoInput" layoutX="266.0" layoutY="264.0" onMouseClicked="#mouseClickContact" prefHeight="36.0" prefWidth="203.0" promptText="Contact Number">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
-      </TextField>
-      <JFXButton fx:id="contactNoSearchBtn1" layoutX="484.0" layoutY="265.0" onAction="#searchUserFromContactNo" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-   </children>
-</AnchorPane>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </bottom>
+</BorderPane>

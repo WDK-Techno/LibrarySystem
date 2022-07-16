@@ -12,7 +12,9 @@ import javafx.scene.layout.AnchorPane;
 
 
 import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
+import library.librarysystem.Function.MailSender;
 import library.librarysystem.Function.ShowErrorMessage;
 
 import java.net.URL;
@@ -25,7 +27,7 @@ import java.util.ResourceBundle;
 public class OverdueDateUserController implements Initializable {
 
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
 
     @FXML
     private TextArea detailsTextArea;
@@ -48,7 +50,7 @@ public class OverdueDateUserController implements Initializable {
 
     private ShowErrorMessage error;
 
-    private String emails = "";
+    private String emails;
     boolean possibleToSendEmail = false;
 
     @Override
@@ -70,6 +72,7 @@ public class OverdueDateUserController implements Initializable {
 
     @FXML
     void getOverdueDateUsers(ActionEvent event) {
+        emails ="";
         possibleToSendEmail = false;
         int countOfEmails = 0;
         String enteredDate;
@@ -129,15 +132,22 @@ public class OverdueDateUserController implements Initializable {
                 pst.setString(2,"No");
 
                 ResultSet resultSet2 = pst.executeQuery();
-                int indexCount = 0;
+
                 while (resultSet2.next()){
 
                     String getMail  = resultSet2.getString("Email");
 
-                    emails = emails.concat(emails);
+                    emails = emails.concat(getMail);
+
+
+                    emails = emails.concat(",");
+
                 }
+                emails = emails.concat("\b"); // remove comma from last email
 
                 possibleToSendEmail = true;
+
+
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -147,22 +157,28 @@ public class OverdueDateUserController implements Initializable {
     } @FXML
     public void sendEmail(ActionEvent event) {
         String emailContent = typeEmail.getText();
-            if (possibleToSendEmail){
-                if (emailContent.equals("")){
-                    System.out.println("Email Type Area can not be empty!");
-                    error.show("Email Type Area can not be empty!");
-
-                }else {
-
-                    System.out.println("process");
-                    System.out.println();
-
-                }
+        if (possibleToSendEmail){
+            if (emailContent.equals("")){
+                System.out.println("Email Type Area can not be empty!");
+                error.show("Email Type Area can not be empty!");
 
             }else {
-                error.show("Can not send Email!");
-                System.out.println("Can not send Email!");
+
+                System.out.println("process");
+                System.out.println();
+
+                MailSender mailSender = new MailSender();
+                String emailSubject = "Galigamuwa Library - Reminder of Book Return ";
+                System.out.println("Send to : " +  emails);
+                mailSender.send(emails,emailSubject,emailContent);
+
+
             }
+
+        }else {
+            error.show("Can not send Email!");
+            System.out.println("Can not send Email!");
+        }
     }
 
 }

@@ -48,6 +48,9 @@ public class OverdueDateUserController implements Initializable {
 
     private ShowErrorMessage error;
 
+    private String emails = "";
+    boolean possibleToSendEmail = false;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -67,7 +70,8 @@ public class OverdueDateUserController implements Initializable {
 
     @FXML
     void getOverdueDateUsers(ActionEvent event) {
-
+        possibleToSendEmail = false;
+        int countOfEmails = 0;
         String enteredDate;
         enteredDate=inputDate.getText();
 
@@ -109,10 +113,31 @@ public class OverdueDateUserController implements Initializable {
                     output = output.concat(collectDetails);
                     output= output.concat( "-------------------------------------\n");
 
-
+                    countOfEmails++;
                 }
 
                  detailsTextArea.setText(output);
+
+
+
+                //get below users ID's
+                String getEmails = "SELECT * FROM user WHERE UserID in (SELECT UserID FROM book_issue WHERE IssueDate<=? AND Received=?)";
+
+                pst = connection.prepareStatement(getEmails);
+
+                pst.setString(1,enteredDate);
+                pst.setString(2,"No");
+
+                ResultSet resultSet2 = pst.executeQuery();
+                int indexCount = 0;
+                while (resultSet2.next()){
+
+                    String getMail  = resultSet2.getString("Email");
+
+                    emails = emails.concat(emails);
+                }
+
+                possibleToSendEmail = true;
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -121,7 +146,23 @@ public class OverdueDateUserController implements Initializable {
 
     } @FXML
     public void sendEmail(ActionEvent event) {
+        String emailContent = typeEmail.getText();
+            if (possibleToSendEmail){
+                if (emailContent.equals("")){
+                    System.out.println("Email Type Area can not be empty!");
+                    error.show("Email Type Area can not be empty!");
 
+                }else {
+
+                    System.out.println("process");
+                    System.out.println();
+
+                }
+
+            }else {
+                error.show("Can not send Email!");
+                System.out.println("Can not send Email!");
+            }
     }
 
 }

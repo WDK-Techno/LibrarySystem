@@ -8,7 +8,9 @@ import java.util.Properties;
 public class MailSender {
 
     public void send(String toEmail,String subject,String content){
-
+        System.out.println("Senders : " + toEmail);
+        System.out.println("Subject : " + subject);
+        System.out.println("Content : " + content);
 
 //        String toEmail = "wdilshankavindra@gmail.com , dkavindraweerasinghe@gmail.com";
         String fromEmail = "wdkprogramtest@gmail.com";
@@ -67,6 +69,12 @@ public class MailSender {
             mex.printStackTrace();
         }
 
+    }
+
+    public static void main(String[] args) {
+        MailSender mailSender = new MailSender();
+
+        mailSender.send("wdilshankavindra@gmail.com,dkavindraWeerasinghe,","Hello testing 3","Hello I am wdk programing test");
     }
 
 }

@@ -7,7 +7,14 @@ import java.util.Properties;
 
 public class MailSender {
 
-    public void send(String toEmail,String subject,String content){
+//    public static void send(String toEmail,String subject,String content){
+    
+    public String toEmail;
+    public String subject;
+    public String content;
+
+    public void send() {
+
         System.out.println("Senders : " + toEmail);
         System.out.println("Subject : " + subject);
         System.out.println("Content : " + content);
@@ -54,7 +61,7 @@ public class MailSender {
             message.setFrom(new InternetAddress(fromEmail));
 
             // Set To: header field of the header.
-            message.addRecipients(Message.RecipientType.BCC,InternetAddress.parse(toEmail));
+            message.addRecipients(Message.RecipientType.BCC, InternetAddress.parse(toEmail));
 
             // Set Subject: header field
             message.setSubject(subject);
@@ -68,13 +75,14 @@ public class MailSender {
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-
     }
 
-    public static void main(String[] args) {
-        MailSender mailSender = new MailSender();
 
-        mailSender.send("wdilshankavindra@gmail.com,dkavindraWeerasinghe,","Hello testing 3","Hello I am wdk programing test");
-    }
+
+//    public static void main(String[] args) {
+//        MailSender mailSender = new MailSender();
+//
+//        mailSender.send("wdilshankavindra@gmail.com,dkavindraWeerasinghe,","Hello testing 3","Hello I am wdk programing test");
+//    }
 
 }

@@ -13,16 +13,16 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1460.0" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <GridPane hgap="60.0" vgap="50.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Book Issue">
+            <JFXButton alignment="CENTER" contentDisplay="TOP" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Add Book">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="50.0" />
                </font>
@@ -34,7 +34,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Book Issue" GridPane.columnIndex="1">
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Add User" GridPane.columnIndex="1">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="50.0" />
                </font>
@@ -46,7 +46,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="690.0" layoutY="10.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Book Issue" GridPane.rowIndex="1">
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="690.0" layoutY="10.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Remove Book" GridPane.rowIndex="1">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="50.0" />
                </font>
@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="410.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Book Issue" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="410.0" prefHeight="420.0" prefWidth="736.0" styleClass="btnMain" stylesheets="@CSS/StylesMainUI.css" text="Send Mail" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="50.0" />
                </font>

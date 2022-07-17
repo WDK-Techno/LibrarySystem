@@ -1,4 +1,4 @@
-package library.librarysystem.Controller;
+package library.librarysystem.ControllerMainUI;
 
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;

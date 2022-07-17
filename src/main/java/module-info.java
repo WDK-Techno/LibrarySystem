@@ -11,4 +11,6 @@ module library.librarysystem {
     exports library.librarysystem;
     exports library.librarysystem.Controller;
     opens library.librarysystem.Controller to javafx.fxml;
+    exports library.librarysystem.ControllerMainUI;
+    opens library.librarysystem.ControllerMainUI to javafx.fxml;
 }

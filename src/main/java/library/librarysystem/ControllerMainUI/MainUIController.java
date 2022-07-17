@@ -1,13 +1,17 @@
 package library.librarysystem.ControllerMainUI;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import library.librarysystem.LibraryApp;
 
@@ -21,6 +25,9 @@ public class MainUIController implements Initializable {
     @FXML
     private AnchorPane loadpagepane;
 
+
+    @FXML
+    private JFXButton logOutBtn;
 
     Pane home;
 
@@ -83,6 +90,19 @@ public class MainUIController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    void logOut(ActionEvent event) throws IOException {
+        logOutBtn.getScene().getWindow().hide();
+
+        Stage loginPage = new Stage();
+        Parent root = FXMLLoader.load(LibraryApp.class.getResource("LoginMain.fxml"));
+        Scene scene = new Scene(root);
+        loginPage.setScene(scene);
+        loginPage.show();
+        loginPage.setResizable(false);
+        loginPage.setMaximized(true);
     }
 
 }

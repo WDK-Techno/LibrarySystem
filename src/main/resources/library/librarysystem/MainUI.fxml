@@ -51,7 +51,7 @@
    <top>
       <BorderPane prefHeight="55.0" style="-fx-background-color: #00a6a3;" BorderPane.alignment="CENTER">
          <right>
-            <JFXButton prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #d8ebea;" text="Log Out" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="logOutBtn" onAction="#logOut" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #d8ebea;" text="Log Out" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets right="11.0" />
                </BorderPane.margin>

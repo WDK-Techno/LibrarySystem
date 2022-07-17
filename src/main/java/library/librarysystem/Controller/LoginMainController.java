@@ -5,12 +5,17 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import library.librarysystem.DBConnection.DBHandler;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +24,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
 import library.librarysystem.Function.ShowErrorMessage;
+import library.librarysystem.LibraryApp;
 
 public class LoginMainController implements Initializable{
 
@@ -73,7 +79,7 @@ public class LoginMainController implements Initializable{
             //database
             connection = handler.getConnection();
 
-            String getDetailsQuery = "SELECT * FROM Staff WHERE UserName = ? AND Password = ?";
+            String getDetailsQuery = "SELECT * FROM staff WHERE UserName = ? AND Password = ?";
 
             try {
                 pst = connection.prepareStatement(getDetailsQuery);
@@ -101,6 +107,20 @@ public class LoginMainController implements Initializable{
                     System.out.println("Loggin Successfull");
 //                System.out.println("Hello " + name);
 
+
+
+                    loginButton.getScene().getWindow().hide();
+
+                    Stage mainPage = new Stage();
+                    Parent root = FXMLLoader.load(LibraryApp.class.getResource("MainUI.fxml"));
+                    Scene scene = new Scene(root);
+                    mainPage.setScene(scene);
+                    mainPage.show();
+                    mainPage.setResizable(false);
+                    mainPage.setMaximized(true);
+
+
+
                 }else {
                     System.out.println("Incorrect Input");
                     //Genarate pop error
@@ -112,7 +132,7 @@ public class LoginMainController implements Initializable{
 
 
 
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 throw new RuntimeException(e);
             }
 

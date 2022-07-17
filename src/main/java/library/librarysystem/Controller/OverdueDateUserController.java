@@ -133,9 +133,9 @@ public class OverdueDateUserController implements Initializable {
 
                 ResultSet resultSet2 = pst.executeQuery();
 
-                while (resultSet2.next()){
+                while (resultSet2.next()) {
 
-                    String getMail  = resultSet2.getString("Email");
+                    String getMail = resultSet2.getString("Email");
 
                     emails = emails.concat(getMail);
 
@@ -143,7 +143,6 @@ public class OverdueDateUserController implements Initializable {
                     emails = emails.concat(",");
 
                 }
-                emails = emails.concat("\b"); // remove comma from last email
 
                 possibleToSendEmail = true;
 
@@ -171,11 +170,10 @@ public class OverdueDateUserController implements Initializable {
                 String emailSubject = "Galigamuwa Library - Reminder of Book Return ";
                 System.out.println("Send to : " +  emails);
 
-                mailSender.toEmail = "wdilshankavindra@gmail.com,helitha40@gmail.com,thilinipriyangika98@gmail.com,tharindu.romesh07@gmail.com,suvinilakshani@gmail.com";
+                mailSender.toEmail = emails;
                 mailSender.subject = emailSubject;
                 mailSender.content = emailContent;
                 mailSender.send();
-//                mailSender.send(emails,emailSubject,emailContent);
 
 
             }

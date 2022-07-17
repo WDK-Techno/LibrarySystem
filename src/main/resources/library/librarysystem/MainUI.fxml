@@ -28,17 +28,17 @@
          <center>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00c0b1;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="Main" textFill="WHITE">
+                  <JFXButton onAction="#loadHome" prefHeight="179.0" prefWidth="331.0" text="Home" textFill="WHITE">
                      <font>
                         <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="SuviTilin" textFill="WHITE">
+                  <JFXButton onAction="#loadManage" prefHeight="179.0" prefWidth="331.0" text="Manage" textFill="WHITE">
                      <font>
                         <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton prefHeight="179.0" prefWidth="331.0" text="Admin" textFill="WHITE">
+                  <JFXButton onAction="#loadAdmin" prefHeight="179.0" prefWidth="331.0" text="Admin" textFill="WHITE">
                      <font>
                         <Font name="DejaVuMathTeXGyre-Regular" size="26.0" />
                      </font>

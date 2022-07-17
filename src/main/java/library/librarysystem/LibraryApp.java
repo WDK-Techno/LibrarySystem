@@ -20,6 +20,7 @@ public class LibraryApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LibraryApp.class.getResource("MainUI.fxml"));
   //      Scene scene = new Scene(fxmlLoader.load(), 800, 600);
    //     Scene scene = new Scene(fxmlLoader.load(), 1425, 975);
+        
 
 
 //        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080); //for logginMain

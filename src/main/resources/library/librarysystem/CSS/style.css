@@ -6,3 +6,9 @@
  -fx-border-radius : 20;
 
 }
+
+.bg {
+
+ -fx-background-color :  green;
+
+}

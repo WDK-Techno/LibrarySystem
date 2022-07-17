@@ -85,6 +85,10 @@
          </left></BorderPane>
    </top>
    <center>
-      <AnchorPane fx:id="loadpagepane" BorderPane.alignment="CENTER" />
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane fx:id="loadpagepane" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </center>
 </BorderPane>

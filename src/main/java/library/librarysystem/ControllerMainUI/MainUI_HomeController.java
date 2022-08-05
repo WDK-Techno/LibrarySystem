@@ -29,7 +29,7 @@ public class MainUI_HomeController {
         loadpagepane.getChildren().clear();
         loadpagepane.getChildren().add((Node) node);
 
-        FadeTransition ft = new FadeTransition(Duration.millis(1500));
+        FadeTransition ft = new FadeTransition(Duration.millis(800));
         ft.setNode(node);
         ft.setFromValue(0.1);
         ft.setToValue(1);

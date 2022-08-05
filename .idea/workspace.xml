@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="64f1b47e-f1cf-4a99-9495-229528801d56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/DBConnection/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/DBConnection/Configs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Manage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Manage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

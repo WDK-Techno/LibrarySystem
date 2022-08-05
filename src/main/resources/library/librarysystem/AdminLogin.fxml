@@ -3,17 +3,27 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AdminLoginController">
+<AnchorPane fx:id="loadpagepane" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AdminLoginController">
    <children>
-      <Text layoutX="257.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Button fx:id="loginButton" layoutX="221.0" layoutY="289.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="30.0" prefWidth="157.0" text="Login" textFill="#593eb1" />
-      <PasswordField fx:id="userInputPassword" layoutX="215.0" layoutY="185.0" prefHeight="30.0" prefWidth="170.0" />
+      <BorderPane fx:id="backGround" layoutX="215.0" layoutY="103.1015625" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" spacing="60.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
+                     <font>
+                        <Font name="Book Antiqua" size="40.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="userInputPassword" prefHeight="48.0" prefWidth="221.0" />
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#adminLogin" prefHeight="45.0" prefWidth="173.0" text="Login" textFill="#593eb1" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="64f1b47e-f1cf-4a99-9495-229528801d56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/RemoveBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/RemoveBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/UserRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/UserRegController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/ControllerMainUI/MainUI_ManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/ControllerMainUI/MainUI_ManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/AddBook.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/AddBook.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Manage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Manage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/OverdueDateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/OverdueDateUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/RemoveBook.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/RemoveBook.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/UserReg.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/UserReg.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/AdminLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/AdminLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/SystemSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/SystemSettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/AdminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/AdminLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SystemSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SystemSettings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

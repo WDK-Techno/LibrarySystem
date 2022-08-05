@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
 
 import java.net.URL;
@@ -23,7 +24,7 @@ import library.librarysystem.Function.ShowErrorMessage;
 public class UserRegController implements Initializable {
 
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
 
     @FXML
     private JFXButton registerButton;

@@ -2,61 +2,67 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.UserRegController">
-   <children>
-      <TextField fx:id="outputUserID" disable="true" layoutX="262.0" layoutY="533.0" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="usernameInput" layoutX="262.0" layoutY="60.0" prefHeight="43.0" prefWidth="258.0" promptText="Name">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="userBirthInput" layoutX="262.0" layoutY="121.0" prefHeight="43.0" prefWidth="258.0" promptText="DOB">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <Text layoutX="230.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Registration">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
-         </font>
-      </Text>
-      <TextField fx:id="userNicInput" layoutX="262.0" layoutY="177.0" prefHeight="43.0" prefWidth="258.0" promptText="NIC">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="userGenderInput" layoutX="262.0" layoutY="237.0" prefHeight="43.0" prefWidth="258.0" promptText="Gender">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="userContacInput" layoutX="262.0" layoutY="300.0" prefHeight="43.0" prefWidth="258.0" promptText="Contact No">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="userEmailInput" layoutX="262.0" layoutY="362.0" prefHeight="43.0" prefWidth="258.0" promptText="Email Address">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="userAddressInput" layoutX="262.0" layoutY="425.0" prefHeight="43.0" prefWidth="258.0" promptText="Address">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="registerButton" layoutX="310.0" layoutY="476.0" onAction="#registerUser" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Register" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-   </children>
-</AnchorPane>
+
+<BorderPane fx:id="backGround" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.UserRegController">
+   <center>
+      <VBox alignment="CENTER" fillWidth="false" prefHeight="621.0" prefWidth="341.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Registration">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="45.0" />
+               </font>
+            </Text>
+            <TextField fx:id="usernameInput" prefHeight="43.0" prefWidth="258.0" promptText="Name">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userBirthInput" prefHeight="43.0" prefWidth="258.0" promptText="DOB">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userNicInput" prefHeight="43.0" prefWidth="258.0" promptText="NIC">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userGenderInput" prefHeight="43.0" prefWidth="258.0" promptText="Gender">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userContacInput" prefHeight="43.0" prefWidth="258.0" promptText="Contact No">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userEmailInput" prefHeight="43.0" prefWidth="258.0" promptText="Email Address">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="userAddressInput" prefHeight="43.0" prefWidth="258.0" promptText="Address">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+            <JFXButton fx:id="registerButton" onAction="#registerUser" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="outputUserID" disable="true" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

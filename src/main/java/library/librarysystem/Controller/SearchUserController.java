@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
 
 import java.net.URL;
@@ -22,7 +23,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class SearchUserController implements Initializable {
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
 
     @FXML
     private TextField contactNoInput;

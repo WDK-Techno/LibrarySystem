@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="64f1b47e-f1cf-4a99-9495-229528801d56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/BookIssue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/BookIssue.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/MainUI_Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/SearchUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/librarysystem/Controller/SearchUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/BookReturn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/BookReturn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SearchBook.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SearchBook.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SearchUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library/librarysystem/SearchUser.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

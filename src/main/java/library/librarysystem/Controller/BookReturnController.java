@@ -28,7 +28,7 @@ import static javafx.scene.paint.Color.RED;
 public class BookReturnController implements Initializable {
 
     @FXML
-    private AnchorPane background;
+    private BorderPane background;
 
     @FXML
     private TextField bookIdInput;

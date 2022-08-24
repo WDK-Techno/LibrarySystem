@@ -1,53 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SystemSettingsController">
-   <children>
-      <Text layoutX="228.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="System Settings">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
-         </font>
-      </Text>
-      <TextField fx:id="overdueCharge" layoutX="280.0" layoutY="167.0" prefHeight="50.0" prefWidth="238.0">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="changeButton" layoutX="331.0" layoutY="419.0" onAction="#changeSystem" prefHeight="55.0" prefWidth="135.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Change" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="280.0" layoutY="116.0" prefHeight="50.0" prefWidth="285.0" text="Overdue Charge (Per Day)">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="241.0" layoutY="167.0" prefHeight="50.0" prefWidth="33.0" text="Rs">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="286.0" layoutY="249.0" prefHeight="50.0" prefWidth="285.0" text="Book Issue Time Period">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="issueTimeInput" layoutX="287.0" layoutY="306.0" prefHeight="50.0" prefWidth="238.0">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <Label layoutX="229.0" layoutY="306.0" prefHeight="50.0" prefWidth="57.0" text="Days">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+
+<BorderPane fx:id="backGround" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SystemSettingsController">
+   <center>
+      <VBox alignment="CENTER" fillWidth="false" spacing="4.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="    System Settings" wrappingWidth="438.5386962890625">
+               <font>
+                  <Font name="Baskerville Old Face" size="58.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="45.0" />
+               </VBox.margin>
+            </Text>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="285.0" text="            Overdue Charge (Per Day)">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
+               </font>
+            </Label>
+            <HBox spacing="27.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="33.0" text="Rs">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="overdueCharge" prefHeight="50.0" prefWidth="238.0">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="285.0" text="      Book Issue Time Period">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="18.0" />
+               </font>
+            </Label>
+            <HBox spacing="5.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="57.0" text="Days">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="issueTimeInput" prefHeight="50.0" prefWidth="238.0">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <JFXButton fx:id="changeButton" onAction="#changeSystem" prefHeight="55.0" prefWidth="135.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Change" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="60.0" top="30.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

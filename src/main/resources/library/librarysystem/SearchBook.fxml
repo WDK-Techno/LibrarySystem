@@ -1,41 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchBookController">
-   <children>
-      <Text layoutX="259.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Book">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="45.0" />
-         </font>
-      </Text>
-      <TextField fx:id="bookNameInput" layoutX="298.0" layoutY="136.0" onMouseClicked="#emptyAuthorField" prefHeight="36.0" prefWidth="203.0" promptText="Book Name">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font></TextField>
-      <JFXButton fx:id="bookSearchBtn" layoutX="516.0" layoutY="137.0" onAction="#searchBookfromBookName" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextField fx:id="authorInput" layoutX="298.0" layoutY="199.0" onMouseClicked="#emptyBookField" prefHeight="36.0" prefWidth="203.0" promptText="Author">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="authorSearchBtn" layoutX="516.0" layoutY="200.0" onAction="#searchBookFromAuthor" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </JFXButton>
-      <TextArea fx:id="outPutTextArea" editable="false" layoutX="152.0" layoutY="278.0" prefHeight="276.0" prefWidth="498.0">
-         <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="22.0" />
-         </font></TextArea>
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.SearchBookController">
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="bookNameInput" onMouseClicked="#emptyAuthorField" prefHeight="44.0" prefWidth="287.0" promptText="Book Name" style="-fx-border-radius: 20; -fx-background-radius: 20;">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton fx:id="bookSearchBtn" onAction="#searchBookfromBookName" prefHeight="52.0" prefWidth="107.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="authorInput" onMouseClicked="#emptyBookField" prefHeight="44.0" prefWidth="289.0" promptText="Author" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton fx:id="authorSearchBtn" onAction="#searchBookFromAuthor" prefHeight="51.0" prefWidth="109.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="outPutTextArea" editable="false" prefHeight="332.0" prefWidth="546.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font name="DejaVuMathTeXGyre-Regular" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="60.0" left="30.0" right="30.0" top="30.0" />
+               </HBox.margin>
+            </TextArea>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Book">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="45.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

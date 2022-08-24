@@ -11,7 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 import library.librarysystem.DBConnection.DBHandler;
+import library.librarysystem.Function.ShowErrorMessage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -22,7 +24,7 @@ import java.util.ResourceBundle;
 
 public class RemoveBookController implements Initializable {
     @FXML
-    private AnchorPane backGround;
+    private BorderPane backGround;
 
     @FXML
     private TextArea bookDetails;
@@ -40,9 +42,12 @@ public class RemoveBookController implements Initializable {
     private Connection connection;
     private PreparedStatement pst;
 
+    private ShowErrorMessage error;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         handler = new DBHandler();
+        error = new ShowErrorMessage();
 
         //chanage staring focuse from first input field to other one.
         final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -62,11 +67,8 @@ public class RemoveBookController implements Initializable {
       String bookID;
       bookID=removeBookID.getText();
       if(bookID==""){
-          //Genarate pop error
-          Alert alert = new Alert(Alert.AlertType.ERROR);
-          alert.setHeaderText(null);
-          alert.setContentText("Input Can't Be Empty");
-          alert.show();
+          error.show("Input Can not be Empty");
+          System.out.println("Input Can not be Empty");
       }
       else {
           connection = handler.getConnection();

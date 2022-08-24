@@ -76,7 +76,7 @@
                         </ImageView>
                      </children>
                   </VBox>
-                  <Label alignment="CENTER" prefHeight="58.0" prefWidth="83.0" text="Kavindra">
+                  <Label fx:id="userNameDisplay" alignment="CENTER" prefHeight="58.0" prefWidth="83.0" text="sss">
                      <font>
                         <Font name="DejaVuMathTeXGyre-Regular" size="14.0" />
                      </font>

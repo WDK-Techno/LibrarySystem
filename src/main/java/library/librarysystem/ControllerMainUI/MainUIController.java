@@ -55,8 +55,8 @@ public class MainUIController implements Initializable {
             while (getLoginRecord.hasNextLine()){
                 lastLine = getLoginRecord.nextLine();
             }
-            String[] splitLastLine = lastLine.split("\t");
-            userNameFromDB = splitLastLine[0];
+            String[] splitLastLine = lastLine.split("\t\t");
+            userNameFromDB = splitLastLine[1];
             userNameDisplay.setText(userNameFromDB);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

@@ -136,7 +136,7 @@ public class LoginMainController implements Initializable{
                             LocalDateTime now = LocalDateTime.now();
 
                             //write username and dateTime to the file
-                            writeFile.write(userNameFromDB + "\t" + dtf.format(now));
+                            writeFile.write(dtf.format(now)+ "\t\t" + userNameFromDB );
                             writeFile.close();
 
 
@@ -157,7 +157,7 @@ public class LoginMainController implements Initializable{
                             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                             LocalDateTime now = LocalDateTime.now();
 
-                            readData = readData.concat(userNameFromDB + "\t" + dtf.format(now));
+                            readData = readData.concat(dtf.format(now)+ "\t\t" + userNameFromDB );
                             //write data to file
                             FileWriter writeFile = new FileWriter("userLoginRecord.txt");
                             writeFile.write(readData);

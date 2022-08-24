@@ -26,6 +26,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -128,7 +130,13 @@ public class LoginMainController implements Initializable{
                             System.out.println(userLogin.getName() + "is created");
 
                             FileWriter writeFile = new FileWriter("userLoginRecord.txt");
-                            writeFile.write(userNameFromDB);
+
+                            //get current time
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                            LocalDateTime now = LocalDateTime.now();
+
+                            //write username and dateTime to the file
+                            writeFile.write(userNameFromDB + "\t" + dtf.format(now));
                             writeFile.close();
 
 
@@ -144,7 +152,12 @@ public class LoginMainController implements Initializable{
                                 readData = readData.concat("\n");
 
                             }
-                            readData = readData.concat(userNameFromDB);
+
+                            //get current time
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                            LocalDateTime now = LocalDateTime.now();
+
+                            readData = readData.concat(userNameFromDB + "\t" + dtf.format(now));
                             //write data to file
                             FileWriter writeFile = new FileWriter("userLoginRecord.txt");
                             writeFile.write(readData);

@@ -46,16 +46,17 @@ public class MainUIController implements Initializable {
 
         loadChildPage();
 
-        //set userName label
-//        LoginMainController login = new LoginMainController();
-//        userNameDisplay.setText(login.userNameFromDB);
+        //set userName label from userLoginRecord.txt
         String userNameFromDB="";
+        String lastLine="";
         File userLogin = new File("userLoginRecord.txt");
         try {
             Scanner getLoginRecord = new Scanner(userLogin);
             while (getLoginRecord.hasNextLine()){
-                userNameFromDB = getLoginRecord.nextLine();
+                lastLine = getLoginRecord.nextLine();
             }
+            String[] splitLastLine = lastLine.split("\t");
+            userNameFromDB = splitLastLine[0];
             userNameDisplay.setText(userNameFromDB);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

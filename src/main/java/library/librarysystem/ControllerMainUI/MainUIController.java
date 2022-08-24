@@ -13,11 +13,17 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import library.librarysystem.Controller.LoginMainController;
 import library.librarysystem.LibraryApp;
+import javafx.scene.control.Label;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import javafx.event.ActionEvent;
 
 public class MainUIController implements Initializable {
@@ -29,12 +35,33 @@ public class MainUIController implements Initializable {
     @FXML
     private JFXButton logOutBtn;
 
+
+    @FXML
+    private Label userNameDisplay;
+
     Pane home;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         loadChildPage();
+
+        //set userName label
+//        LoginMainController login = new LoginMainController();
+//        userNameDisplay.setText(login.userNameFromDB);
+        String userNameFromDB="";
+        File userLogin = new File("userLoginRecord.txt");
+        try {
+            Scanner getLoginRecord = new Scanner(userLogin);
+            while (getLoginRecord.hasNextLine()){
+                userNameFromDB = getLoginRecord.nextLine();
+            }
+            userNameDisplay.setText(userNameFromDB);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
 
     }
 
@@ -43,7 +70,7 @@ public class MainUIController implements Initializable {
         loadpagepane.getChildren().clear();
         loadpagepane.getChildren().add((Node) node);
 
-        FadeTransition ft = new FadeTransition(Duration.millis(1500));
+        FadeTransition ft = new FadeTransition(Duration.millis(800));
         ft.setNode(node);
         ft.setFromValue(0.1);
         ft.setToValue(1);

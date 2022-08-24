@@ -9,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="backGround" prefHeight="850.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AddBookController">
+<BorderPane fx:id="backGround" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.AddBookController">
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="102.0" prefWidth="1270.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name : " wrappingWidth="130.0">
                      <font>
@@ -23,7 +23,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Book_Name" fx:id="BookName" prefHeight="40.0" prefWidth="500.0" promptText="Book Name" />
+                  <TextField id="Book_Name" fx:id="BookName" prefHeight="50.0" prefWidth="500.0" promptText="Book Name" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -36,7 +36,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Author" fx:id="Author" prefHeight="40.0" prefWidth="500.0" promptText="Author" />
+                  <TextField id="Author" fx:id="Author" prefHeight="53.0" prefWidth="500.0" promptText="Author" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -49,12 +49,12 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Category" fx:id="Category" prefHeight="40.0" prefWidth="500.0" promptText="Category" />
+                  <TextField id="Category" fx:id="Category" prefHeight="57.0" prefWidth="500.0" promptText="Category" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXButton fx:id="AddBookButton" onAction="#Bookadd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20;" text="Add Book" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="AddBookButton" onAction="#Bookadd" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20;" text="Add Book" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -73,7 +73,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField id="Book_ID" fx:id="BookID" editable="false" promptText="Book ID" />
+                        <TextField id="Book_ID" fx:id="BookID" editable="false" prefHeight="36.0" prefWidth="206.0" promptText="Book ID" />
                      </children>
                   </VBox>
                </children>

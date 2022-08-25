@@ -23,7 +23,10 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Book_Name" fx:id="BookName" prefHeight="50.0" prefWidth="500.0" promptText="Book Name" />
+                  <TextField id="Book_Name" fx:id="BookName" prefHeight="50.0" prefWidth="500.0" promptText="Book Name" style="-fx-border-radius: 20; -fx-background-radius: 20;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -36,7 +39,10 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Author" fx:id="Author" prefHeight="53.0" prefWidth="500.0" promptText="Author" />
+                  <TextField id="Author" fx:id="Author" prefHeight="50.0" prefWidth="500.0" promptText="Author" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -49,14 +55,17 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField id="Category" fx:id="Category" prefHeight="57.0" prefWidth="500.0" promptText="Category" />
+                  <TextField id="Category" fx:id="Category" prefHeight="50.0" prefWidth="500.0" promptText="Category" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXButton fx:id="AddBookButton" onAction="#Bookadd" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20;" text="Add Book" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="AddBookButton" onAction="#Bookadd" prefHeight="51.0" prefWidth="109.0" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: white;" text="Add Book" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="17.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -73,7 +82,10 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField id="Book_ID" fx:id="BookID" editable="false" prefHeight="36.0" prefWidth="206.0" promptText="Book ID" />
+                        <TextField id="Book_ID" fx:id="BookID" editable="false" prefHeight="36.0" prefWidth="206.0" promptText="Book ID" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                      </children>
                   </VBox>
                </children>
@@ -86,7 +98,7 @@
          <children>
             <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
                <font>
-                  <Font name="Arial" size="40.0" />
+                  <Font size="45.0" />
                </font>
             </Text>
          </children>

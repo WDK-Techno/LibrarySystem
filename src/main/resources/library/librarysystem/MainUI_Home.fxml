@@ -29,7 +29,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/book%20issue.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -41,7 +41,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/book%20return.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -53,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/search%20user.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -65,7 +65,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/search%20book.png" />
                      </image>
                   </ImageView>
                </graphic>

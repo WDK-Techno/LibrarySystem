@@ -123,7 +123,7 @@ public class AdminLoginController implements Initializable {
 
 
                     try {
-                        home = FXMLLoader.load(LibraryApp.class.getResource("SystemSettings.fxml"));
+                        home = FXMLLoader.load(LibraryApp.class.getResource("MainUI_Admin.fxml"));
                         setNode(home);
                     } catch (IOException e) {
                         throw new RuntimeException(e);

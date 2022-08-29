@@ -49,7 +49,7 @@ public class DateDifferent {
 
                 preMonth=1; //after run one time reset month
 
-                monthCount++; //for get year count end of the program
+                monthCount++; //for get month count end of the program
 
 
                 for (runDate=preDate;runDate<= monthDates[runMonth-1];runDate++){

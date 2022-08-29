@@ -14,6 +14,9 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import library.librarysystem.DBConnection.DBHandler;
+import library.librarysystem.Function.FindReturnDate;
+import library.librarysystem.Function.GetSettingValuesFromDB;
+import library.librarysystem.Function.MailSender;
 import library.librarysystem.Function.ShowErrorMessage;
 
 import java.net.URL;
@@ -72,15 +75,20 @@ public class BookIssueController implements Initializable {
     Boolean bookCanIssue;
     Boolean userCanGetBook;
 
+    //this variables use for send email
+    String userIDForSend;
+    String bookIDForSend;
+    String userEmailForSend;
+    String userNameForSend;
+    String bookNameForSend;
+    String bookAuhtorForSend;
+
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-//        userElegible.setWidth(0);
-//        userNotElegible.setWidth(0);
-//        bookElegible.setWidth(0);
-//        bookNotElegible.setWidth(0);
 
         handler= new DBHandler();
         error = new ShowErrorMessage();
@@ -141,7 +149,6 @@ public class BookIssueController implements Initializable {
                     String BookNameFromDB = result.getString("BookName");
                     String BookAuthorFromDB = result.getString("BookAuthor");
                     String BookCategoryFromDB = result.getString("BookCategory");
-
                     bookInfoOutputTextArea.setText(
                             "BookID   : " + BookIDFromFB + "\n" +
                                     "Name     : " + BookNameFromDB + "\n" +
@@ -152,7 +159,17 @@ public class BookIssueController implements Initializable {
                             "Name     : " + BookNameFromDB + "\n" +
                             "Author   : " + BookAuthorFromDB + "\n" +
                             "Category : " + BookCategoryFromDB + "\n\n");
+
+
+                    //this is for sending email
+                    bookIDForSend = BookIDFromFB;
+                    bookNameForSend = BookNameFromDB;
+                    bookAuhtorForSend = BookAuthorFromDB;
+
+
                 }
+
+
                 if (foundbook == 1) {
 
 
@@ -255,6 +272,12 @@ public class BookIssueController implements Initializable {
                                 "User Name  :- " + userNameFromDB+"\n"+
                                 "NIC        :- "+ nicFromDB+"\n"+
                                 "Gender     :- "+genderFromDB+"\n");
+
+                //this is user for sending email
+                userIDForSend = String.valueOf(userIDFromDB);
+                userNameForSend = userNameFromDB;
+                userEmailForSend = result.getString("Email");
+
             }
             if (founduser == 1){
 
@@ -328,8 +351,8 @@ public class BookIssueController implements Initializable {
             String insertDataQuary = "INSERT INTO book_issue(UserID,BookID,IssueDate,Received) VALUES (?,?,?,?)";
 
             try {
-                pst = connection.prepareStatement(insertDataQuary);
 
+                pst = connection.prepareStatement(insertDataQuary);
                 pst.setString(1,userID);
                 pst.setString(2,bookID);
                 pst.setString(3, String.valueOf(java.time.LocalDate.now()));
@@ -341,6 +364,31 @@ public class BookIssueController implements Initializable {
                 throw new RuntimeException(e);
             }
 
+
+            //send email to user with including issue date and receiving date
+            String currentDate = String.valueOf(java.time.LocalDate.now());
+
+            GetSettingValuesFromDB settings = new GetSettingValuesFromDB();
+            int bookIssueDateCount =settings.overDueDates;
+
+            FindReturnDate returnDate = new FindReturnDate();
+            String bookReturnDate = returnDate.findReturnDate(bookIssueDateCount);
+
+            MailSender sendmail  = new MailSender();
+            sendmail.subject = "Galigamuwa Library - Book Issue Receipt";
+            sendmail.toEmail=userEmailForSend;
+            sendmail.content = "Dear " + userNameForSend + ",\n\n" +
+                    "You have been issued Book under user ID " + userIDForSend + "\n" +
+                    "Details :- \n" +
+                    "Book ID  : "+ bookIDForSend + "\n" +
+                    "Name     : "+ bookNameForSend + "\n" +
+                    "Author   : "+ bookAuhtorForSend + "\n\n" +
+                    "Issued Date   : " + currentDate + "\n" +
+                    "Return Date   : " + bookReturnDate +"\n\n" +
+                    "Thank you\n" +
+                    "Best Regards\n" +
+                    "- This is automatic message -";
+            sendmail.send();
         }
         else if (foundbook !=1 || founduser != 1){
             System.out.println("Check Again User ID and Book ID !!");

@@ -9,34 +9,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane fx:id="backGround" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.RemoveBookController">
    <center>
       <VBox alignment="CENTER" fillWidth="false" spacing="50.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Book">
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Book">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="45.0" />
                </font>
             </Text>
-            <TextField fx:id="removeBookID" prefHeight="43.0" prefWidth="258.0" promptText="Book Id">
+            <TextField fx:id="removeBookID" prefHeight="43.0" prefWidth="258.0" promptText="Book Id" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="checkButton" onAction="#checkBook" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Check" textFill="WHITE">
+            <JFXButton fx:id="checkButton" onAction="#checkBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Check" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font size="20.0" />
                </font>
             </JFXButton>
             <HBox alignment="CENTER" prefHeight="214.0" prefWidth="380.0">
                <children>
-                  <TextArea fx:id="bookDetails" disable="true" prefHeight="214.0" prefWidth="1270.0" />
+                  <TextArea fx:id="bookDetails" disable="true" prefHeight="214.0" prefWidth="1270.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
                </children>
             </HBox>
-            <JFXButton fx:id="removeButton" onAction="#removeBook" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Remove" textFill="WHITE">
+            <JFXButton fx:id="removeButton" onAction="#removeBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Remove" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font size="20.0" />
                </font>
             </JFXButton>
          </children>

@@ -9,22 +9,22 @@
 
 <AnchorPane fx:id="backGround" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #DBE1E0; -fx-border-style: dashed;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.StaffRegController">
    <children>
-      <Text layoutX="210.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Registation" textAlignment="CENTER" wrappingWidth="423.84978675842285">
+      <Text fill="#00c0b1" layoutX="210.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Registation" textAlignment="CENTER" wrappingWidth="423.84978675842285">
          <font>
-            <Font name="DejaVuMathTeXGyre-Regular" size="32.0" />
+            <Font size="45.0" />
          </font>
       </Text>
-      <TextField fx:id="userNameInput" layoutX="303.0" layoutY="191.0" promptText="User Name" AnchorPane.rightAnchor="235.39999999999998" AnchorPane.topAnchor="191.0">
+      <TextField fx:id="userNameInput" layoutX="289.0" layoutY="191.0" prefHeight="38.0" prefWidth="271.0" promptText="User Name" style="-fx-background-radius: 20; -fx-border-radius: 20;">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="signUpButton" layoutX="289.0" layoutY="386.0" onAction="#registerStaff" prefHeight="50.0" prefWidth="271.0" ripplerFill="BLACK" style="-fx-background-color: #4E80ED;" text="SignUp">
+      <JFXButton fx:id="signUpButton" layoutX="340.0" layoutY="386.0" onAction="#registerStaff" prefHeight="50.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: #00c0b1; -fx-background-radius: 20; -fx-border-radius: 20;" text="SignUp" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Georgia Bold" size="26.0" />
+            <Font size="20.0" />
          </font>
       </JFXButton>
-      <PasswordField fx:id="passwordInput" layoutX="289.0" layoutY="276.0" prefHeight="38.0" prefWidth="271.0" promptText="Password">
+      <PasswordField fx:id="passwordInput" layoutX="289.0" layoutY="276.0" prefHeight="38.0" prefWidth="271.0" promptText="Password" style="-fx-background-radius: 20; -fx-border-radius: 20;">
          <font>
             <Font size="20.0" />
          </font>

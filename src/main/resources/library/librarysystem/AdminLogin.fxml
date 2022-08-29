@@ -14,13 +14,19 @@
          <center>
             <VBox alignment="CENTER" fillWidth="false" spacing="60.0" BorderPane.alignment="CENTER">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
+                  <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
                      <font>
-                        <Font name="Book Antiqua" size="40.0" />
+                        <Font size="46.0" />
                      </font>
                   </Text>
-                  <PasswordField fx:id="userInputPassword" prefHeight="48.0" prefWidth="221.0" />
-                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#adminLogin" prefHeight="45.0" prefWidth="173.0" text="Login" textFill="#593eb1" />
+                  <PasswordField fx:id="userInputPassword" prefHeight="48.0" prefWidth="221.0" promptText="Password" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></PasswordField>
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#adminLogin" prefHeight="45.0" prefWidth="173.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
                </children>
             </VBox>
          </center>

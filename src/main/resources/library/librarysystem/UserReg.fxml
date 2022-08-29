@@ -7,57 +7,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane fx:id="backGround" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.librarysystem.Controller.UserRegController">
    <center>
       <VBox alignment="CENTER" fillWidth="false" prefHeight="621.0" prefWidth="341.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Registration">
+            <Text fill="#00c0b1" strokeType="OUTSIDE" strokeWidth="0.0" text="User Registration">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="45.0" />
                </font>
             </Text>
-            <TextField fx:id="usernameInput" prefHeight="43.0" prefWidth="258.0" promptText="Name">
+            <TextField fx:id="usernameInput" prefHeight="43.0" prefWidth="258.0" promptText="Name" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userBirthInput" prefHeight="43.0" prefWidth="258.0" promptText="DOB">
+            <TextField fx:id="userBirthInput" prefHeight="43.0" prefWidth="258.0" promptText="DOB" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userNicInput" prefHeight="43.0" prefWidth="258.0" promptText="NIC">
+            <TextField fx:id="userNicInput" prefHeight="43.0" prefWidth="258.0" promptText="NIC" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userGenderInput" prefHeight="43.0" prefWidth="258.0" promptText="Gender">
+            <TextField fx:id="userGenderInput" prefHeight="43.0" prefWidth="258.0" promptText="Gender" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userContacInput" prefHeight="43.0" prefWidth="258.0" promptText="Contact No">
+            <TextField fx:id="userContacInput" prefHeight="43.0" prefWidth="258.0" promptText="Contact No" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userEmailInput" prefHeight="43.0" prefWidth="258.0" promptText="Email Address">
+            <TextField fx:id="userEmailInput" prefHeight="43.0" prefWidth="258.0" promptText="Email Address" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="userAddressInput" prefHeight="43.0" prefWidth="258.0" promptText="Address">
+            <TextField fx:id="userAddressInput" prefHeight="43.0" prefWidth="258.0" promptText="Address" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="registerButton" onAction="#registerUser" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4E80ED; -fx-border-color: white;" text="Register" textFill="WHITE">
+            <JFXButton fx:id="registerButton" onAction="#registerUser" prefHeight="52.0" prefWidth="138.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Register" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="outputUserID" disable="true" prefHeight="18.0" prefWidth="258.0" promptText="User Id">
+            <TextField fx:id="outputUserID" disable="true" prefHeight="18.0" prefWidth="258.0" promptText="User Id" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <font>
                   <Font name="DejaVuMathTeXGyre-Regular" size="20.0" />
                </font>

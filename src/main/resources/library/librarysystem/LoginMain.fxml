@@ -19,13 +19,19 @@
             <AnchorPane fx:id="backGround">
                <children>
                   <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="700.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="610.0" />
-                  <TextField fx:id="userNameInput" layoutX="174.0" layoutY="238.0" prefHeight="61.0" prefWidth="331.0" promptText="User Name" />
-                  <JFXButton fx:id="loginButton" layoutX="235.0" layoutY="519.0" onAction="#loginToSystem" prefHeight="78.0" prefWidth="158.0" style="-fx-background-color: #2196f3; -fx-border-radius: 100,100; -fx-background-radius: 100,100;" text="Login" textFill="WHITE">
+                  <TextField fx:id="userNameInput" layoutX="174.0" layoutY="238.0" prefHeight="61.0" prefWidth="331.0" promptText="User Name" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                      <font>
-                        <Font name="DejaVu Serif Bold" size="13.0" />
+                        <Font size="20.0" />
+                     </font></TextField>
+                  <JFXButton fx:id="loginButton" layoutX="235.0" layoutY="535.0" onAction="#loginToSystem" prefHeight="62.0" prefWidth="158.0" style="-fx-background-color: #00c0b1; -fx-border-radius: 100,100; -fx-background-radius: 100,100;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
                      </font>
                   </JFXButton>
-                  <PasswordField fx:id="passwordInput" layoutX="166.0" layoutY="390.0" prefHeight="58.0" prefWidth="339.0" promptText="Password" />
+                  <PasswordField fx:id="passwordInput" layoutX="166.0" layoutY="390.0" prefHeight="58.0" prefWidth="339.0" promptText="Password" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></PasswordField>
                   <ImageView fitHeight="62.0" fitWidth="66.0" layoutX="85.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Contacts_52px.png" />
@@ -38,7 +44,7 @@
                   </ImageView>
                   <Text fill="#00c0b1" layoutX="146.0" layoutY="68.203125" strokeType="OUTSIDE" strokeWidth="0.0" text="SYSTEM LOGIN" textAlignment="CENTER" wrappingWidth="354.13671875">
                      <font>
-                        <Font size="48.0" />
+                        <Font size="45.0" />
                      </font>
                   </Text>
                </children>

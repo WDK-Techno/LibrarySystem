@@ -217,7 +217,4 @@ public class LoginMainController implements Initializable{
         }
 
     }
-
-
-
 }

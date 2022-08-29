@@ -1,5 +1,6 @@
 package library.librarysystem.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -36,7 +37,7 @@ public class AdminLoginController implements Initializable {
     private AnchorPane loadpagepane;
 
     @FXML
-    private Button loginButton;
+    private JFXButton loginButton;
 
     @FXML
     private PasswordField userInputPassword;

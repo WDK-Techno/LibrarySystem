@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -23,10 +23,11 @@
                      <font>
                         <Font size="20.0" />
                      </font></PasswordField>
-                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#adminLogin" prefHeight="45.0" prefWidth="173.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="loginButton" onAction="#adminLogin" prefHeight="52.0" prefWidth="138.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Login" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
-                     </font></Button>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </VBox>
          </center>

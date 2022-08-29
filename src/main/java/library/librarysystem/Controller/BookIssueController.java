@@ -389,6 +389,12 @@ public class BookIssueController implements Initializable {
                     "Best Regards\n" +
                     "- This is automatic message -";
             sendmail.send();
+
+
+            //clear display
+            bookInfoOutputTextArea.setText("");
+            userInfoOutputTextArea.setText("");
+
         }
         else if (foundbook !=1 || founduser != 1){
             System.out.println("Check Again User ID and Book ID !!");

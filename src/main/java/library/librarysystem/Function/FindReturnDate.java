@@ -5,7 +5,7 @@ public class FindReturnDate {
 //
 //        FindReturnDate find = new FindReturnDate();
 //
-//        String date = find.findReturnDate(200);
+//        String date = find.findReturnDate(14);
 //
 //    }
     
@@ -50,9 +50,9 @@ public class FindReturnDate {
           }
 
         }
-        System.out.println(currentDate);
+        System.out.println("Current Date : "+currentDate);
         returnDate = runYear +"-"+runMonth +"-"+ runDate;
-        System.out.println (returnDate);
+        System.out.println ("Return Date : "+returnDate);
         return returnDate;
     }
 }

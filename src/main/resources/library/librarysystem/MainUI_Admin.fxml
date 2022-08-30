@@ -27,7 +27,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/staff%20reg.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -39,7 +39,7 @@
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/logo.png" />
+                        <Image url="@Images/settings.png" />
                      </image>
                   </ImageView>
                </graphic>

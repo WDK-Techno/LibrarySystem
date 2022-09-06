@@ -126,7 +126,7 @@ public class UserRegController implements Initializable {
                     outputUserID.setText("User ID: " +userIDfromDB);
 
                     //clear fields
-                    outputUserID.setText("");
+                    
                     userAddressInput.setText("");
                     userBirthInput.setText("");
                     userContacInput.setText("");

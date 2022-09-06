@@ -183,6 +183,10 @@ public class LoginMainController implements Initializable{
                 }
                 if (found == 1){
                     System.out.println("Loggin Successfull");
+
+                    //clear fields
+                    passwordInput.setText("");
+                    userNameInput.setText("");
 //                System.out.println("Hello " + name);
 
 

@@ -132,6 +132,10 @@ public class RemoveBookController implements Initializable {
             pst.executeUpdate();
             System.out.println("Book is Deleted!");
 
+            //clear fields
+            bookDetails.setText("");
+            removeBookID.setText("");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

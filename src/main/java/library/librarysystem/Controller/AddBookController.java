@@ -123,6 +123,12 @@ public class AddBookController implements Initializable {
 
                     BookID.setText( bookNameFromDb+"\t Book ID : "+bookIdFromDb);
 
+                    //clear fields
+                    Author.setText("");
+                    BookID.setText("");
+                    BookName.setText("");
+                    Category.setText("");
+
                 }
 
 

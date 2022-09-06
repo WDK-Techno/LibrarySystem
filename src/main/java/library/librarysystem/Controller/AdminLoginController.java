@@ -122,6 +122,9 @@ public class AdminLoginController implements Initializable {
 
                     System.out.println("Loggin Successfull");
 
+                    //clear field
+                    userInputPassword.setText("");
+
 
                     try {
                         home = FXMLLoader.load(LibraryApp.class.getResource("MainUI_Admin.fxml"));

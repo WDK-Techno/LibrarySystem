@@ -166,6 +166,11 @@ public class OverdueDateUserController implements Initializable {
                 System.out.println("process");
                 System.out.println();
 
+                //clear fields
+                detailsTextArea.setText("");
+                inputDate.setText("");
+                typeEmail.setText("");
+
                 MailSender mailSender = new MailSender();
                 String emailSubject = "Galigamuwa Library - Reminder of Book Return ";
                 System.out.println("Send to : " +  emails);

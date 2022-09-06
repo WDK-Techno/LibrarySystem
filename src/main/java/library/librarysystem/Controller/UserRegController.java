@@ -126,7 +126,7 @@ public class UserRegController implements Initializable {
                     outputUserID.setText("User ID: " +userIDfromDB);
 
                     //clear fields
-                    
+
                     userAddressInput.setText("");
                     userBirthInput.setText("");
                     userContacInput.setText("");
@@ -137,7 +137,8 @@ public class UserRegController implements Initializable {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                //throw new RuntimeException(e);
+                error.show("invalid input");
             }
             System.out.println("User Details");
             System.out.println("Name: " +name);

@@ -63,7 +63,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <TextField id="Book_ID" fx:id="BookID" editable="false" prefHeight="45.0" prefWidth="135.0" promptText="Book ID" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                  <TextField id="Book_ID" fx:id="BookID" disable="true" editable="false" prefHeight="46.0" prefWidth="236.0" promptText="Book ID" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>

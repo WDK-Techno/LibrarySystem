@@ -324,6 +324,13 @@ public class BookReturnController implements Initializable {
 
                 System.out.println("Book Return Complete");
 
+                //clear fields
+                outputBookDetails.setText("");
+                outputUserDetails.setText("");
+                overdueChargeOutput.setText("");
+                overDueDateCountOutput.setText("");
+                bookIdInput.setText("");
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

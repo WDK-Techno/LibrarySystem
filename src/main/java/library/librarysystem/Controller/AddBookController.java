@@ -121,11 +121,10 @@ public class AddBookController implements Initializable {
                     System.out.println("Book name :" +bookNameFromDb);
                     System.out.println("Book ID :"+ bookIdFromDb);
 
-                    BookID.setText( bookNameFromDb+"\t Book ID : "+bookIdFromDb);
+                    BookID.setText("Book ID : "+bookIdFromDb);
 
                     //clear fields
                     Author.setText("");
-                    BookID.setText("");
                     BookName.setText("");
                     Category.setText("");
 

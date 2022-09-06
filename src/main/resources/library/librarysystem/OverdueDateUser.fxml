@@ -24,7 +24,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </TextField>
-                  <JFXButton fx:id="getDetailsButton" onAction="#getOverdueDateUsers" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Get Deatails" textFill="WHITE">
+                  <JFXButton fx:id="getDetailsButton" onAction="#getOverdueDateUsers" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Get Deatails" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -57,7 +57,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXButton fx:id="sendEmailButton" onAction="#sendEmail" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Send Email" textFill="WHITE">
+                  <JFXButton fx:id="sendEmailButton" onAction="#sendEmail" prefHeight="50.0" prefWidth="137.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Send Email" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>

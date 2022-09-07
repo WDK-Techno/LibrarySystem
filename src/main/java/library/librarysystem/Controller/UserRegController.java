@@ -124,10 +124,21 @@ public class UserRegController implements Initializable {
                     int userIDfromDB=result.getInt("UserID");
                     System.out.println("User ID: " +userIDfromDB);
                     outputUserID.setText("User ID: " +userIDfromDB);
+
+                    //clear fields
+
+                    userAddressInput.setText("");
+                    userBirthInput.setText("");
+                    userContacInput.setText("");
+                    userEmailInput.setText("");
+                    userGenderInput.setText("");
+                    userNicInput.setText("");
+                    usernameInput.setText("");
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                //throw new RuntimeException(e);
+                error.show("invalid input");
             }
             System.out.println("User Details");
             System.out.println("Name: " +name);

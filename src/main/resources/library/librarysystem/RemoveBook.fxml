@@ -30,7 +30,10 @@
             </JFXButton>
             <HBox alignment="CENTER" prefHeight="214.0" prefWidth="380.0">
                <children>
-                  <TextArea fx:id="bookDetails" disable="true" prefHeight="214.0" prefWidth="1270.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
+                  <TextArea fx:id="bookDetails" disable="true" prefHeight="214.0" prefWidth="1270.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextArea>
                </children>
             </HBox>
             <JFXButton fx:id="removeButton" onAction="#removeBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #00c0b1; -fx-border-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Remove" textFill="WHITE">

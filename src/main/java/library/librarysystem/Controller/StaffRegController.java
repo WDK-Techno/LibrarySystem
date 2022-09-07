@@ -70,6 +70,10 @@ public class StaffRegController implements Initializable {
 
             error.show("Input Can not be Empty");
             System.out.println("Input Can not be Empty");
+
+            //clear fields
+            passwordInput.setText("");
+            userNameInput.setText("");
         }else {
 
             //SAVING DATA TO DATABASE
